@@ -1,0 +1,2340 @@
+[
+  {
+    "year": 2026,
+    "no": 24,
+    "title": "(소비자경보 2026-24호) \"상품권을 사면 대출이 된다?\" 100% 보이스피싱입니다!",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=221716&menuNo=200204&pageIndex=1"
+  },
+  {
+    "year": 2026,
+    "no": 23,
+    "title": "(소비자경보 2026-23호) 은행권 ETF 신탁 거래 관련 소비자경보 발령",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=220585&menuNo=200204&pageIndex=1"
+  },
+  {
+    "year": 2026,
+    "no": 22,
+    "title": "(소비자경보 2026-22호) 빌리지도 않은 휴대폰이 고금리의 덫? 거기에 eSIM 사기까지",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "고수익",
+      "유사수신"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=219298&menuNo=200204&pageIndex=1"
+  },
+  {
+    "year": 2026,
+    "no": 21,
+    "title": "(소비자경보 2026-21호) 카드 부정 사용 피해를 줄이기 위한 소비자경보 발령",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "비대면"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=219072&menuNo=200204&pageIndex=1"
+  },
+  {
+    "year": 2026,
+    "no": 20,
+    "title": "(소비자경보 2026-20호) 「보험점검센터」는 공공기관이 아닙니다! 개인정보 제공 동의 요청에 유의하세요.",
+    "type": "보험",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=219009&menuNo=200204&pageIndex=1"
+  },
+  {
+    "year": 2026,
+    "no": 19,
+    "title": "(소비자경보 2026-19호) 주차비, 출장비도 이자였어? 고금리 변종 차량담보대출은 절대 이용하지 마세요!",
+    "type": "대출사기",
+    "prevention_possibility": "상",
+    "verification_target": "차량담보대출 이자·수수료 명목의 적법성",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=218863&menuNo=200204&pageIndex=1"
+  },
+  {
+    "year": 2026,
+    "no": 18,
+    "title": "(소비자경보 2026-18호) 비상장주식 투자해 준다더니 내 돈은 어디로? 금융회사라고 해도 일단 의심하세요.",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=218784&menuNo=200204&pageIndex=1"
+  },
+  {
+    "year": 2026,
+    "no": 17,
+    "title": "(소비자경보 2026-17호) 단일종목 레버리지·인버스 상품 관련 소비자경보 발령",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "단기간"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=218690&menuNo=200204&pageIndex=1"
+  },
+  {
+    "year": 2026,
+    "no": 16,
+    "title": "(소비자경보 2026-16호) 중고차 대출 피해 예방을 위해 5가지 유의사항을 기억하세요!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=218659&menuNo=200204&pageIndex=1"
+  },
+  {
+    "year": 2026,
+    "no": 15,
+    "title": "(소비자경보 2026-15호) 홍길동이 단체이름이라구요? 개인명의를 사칭한 \"삼행시 단체통장\"에 유의하세요!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=218077&menuNo=200204&pageIndex=1"
+  },
+  {
+    "year": 2026,
+    "no": 14,
+    "title": "(소비자경보 2026-14호) 정착지원금 과다 지급 경쟁 등으로 인한 보험계약 부당승환 우려 - 소비자경보 「주의」 발령",
+    "type": "보험",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=217722&menuNo=200204&pageIndex=2"
+  },
+  {
+    "year": 2026,
+    "no": 13,
+    "title": "(소비자경보 2026-13호) 가상계좌를 이용한 금융사기에 유의하세요! 당신은 피해자이면서 범죄자가 될 수 있습니다!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=217328&menuNo=200204&pageIndex=2"
+  },
+  {
+    "year": 2026,
+    "no": 12,
+    "title": "(소비자경보 2026-12호) \"전세보증금인 줄 알았는데 보장이 안 된다고?\" '민간임대주택 매매예약금' 대출 주의보",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=217215&menuNo=200204&pageIndex=2"
+  },
+  {
+    "year": 2026,
+    "no": 11,
+    "title": "(소비자경보 2026-11호) 사채업자 '이실장'이 당신을 노린다??!! - 최근 기승하는 불법사금융 범죄수법과 피해사례 및 소비자 유의사항 -",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=216726&menuNo=200204&pageIndex=2"
+  },
+  {
+    "year": 2026,
+    "no": 10,
+    "title": "(소비자경보 2026-10호) '코인 보내면 빚 깎아 드립니다' - 대부업체를 사칭한 사기 메일 주의!! 소비자경보 발령",
+    "type": "가상자산",
+    "prevention_possibility": "상",
+    "verification_target": "발신 메일·URL의 대부업체 명의 진위",
+    "signals": [
+      "사칭"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=216588&menuNo=200204&pageIndex=2"
+  },
+  {
+    "year": 2026,
+    "no": 9,
+    "title": "(소비자경보 2026-9호) 중동 상황 등 국제 정세가 불안한 틈을 노린 보이스피싱에 주의하세요!",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=214966&menuNo=200204&pageIndex=2"
+  },
+  {
+    "year": 2026,
+    "no": 8,
+    "title": "(소비자경보 2026-8호) 고수익? 원금보장? 그런 건 없다! - 중동 혼란 틈탄 투자사기 기승에 대비, 소비자경보 발령 -",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "본문 미명시",
+    "signals": [
+      "고수익",
+      "유사수신",
+      "원금보장",
+      "원금 보장"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=214014&menuNo=200204&pageIndex=2"
+  },
+  {
+    "year": 2026,
+    "no": 7,
+    "title": "(소비자경보 2026-7호) 빗썸 오지급 보상 안내의 URL 링크는 사기입니다.",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭",
+      "카카오톡"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=211148&menuNo=200204&pageIndex=2"
+  },
+  {
+    "year": 2026,
+    "no": 6,
+    "title": "(소비자경보 2026-6호) 풍주·사주를 미끼로 당신의 재산을 노리는 투자 사기를 주의하세요!!!",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "제도권 금융회사 여부·주식거래 앱 진위",
+    "signals": [
+      "사칭",
+      "고수익",
+      "SNS",
+      "리딩방",
+      "1:1 채팅"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=211124&menuNo=200204&pageIndex=2"
+  },
+  {
+    "year": 2026,
+    "no": 5,
+    "title": "(소비자경보 2026-5호) 금 팔고 받은 돈이 보이스피싱 피해금? 당신의 계좌가 사기범의 세탁통로로 이용될 수 있습니다.",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=210797&menuNo=200204&pageIndex=2"
+  },
+  {
+    "year": 2026,
+    "no": 4,
+    "title": "(소비자경보 2026-4호) 울면서 \"엄마\" 부르는 아이 목소리… 알고보니 AI 보이스피싱",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=209957&menuNo=200204&pageIndex=3"
+  },
+  {
+    "year": 2026,
+    "no": 3,
+    "title": "(소비자경보 2026-3호) 코스피 및 코스닥 열풍 속 불법 리딩방이 기승을 부리고 있으니 금융소비자께서는 각별히 주의하시기 바랍니다.",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "업체·채팅방의 적법성",
+    "signals": [
+      "사칭",
+      "고수익",
+      "리딩방"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=209394&menuNo=200204&pageIndex=3"
+  },
+  {
+    "year": 2026,
+    "no": 2,
+    "title": "(소비자경보 2026-2호) 달러보험 가입시 소비자 핵심 유의사항 및 주요 민원사례 - 소비자경보 「주의」 발령",
+    "type": "보험",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=208938&menuNo=200204&pageIndex=3"
+  },
+  {
+    "year": 2026,
+    "no": 1,
+    "title": "(소비자경보 2026-1호) 상장시 대박이라며 비상장주식 매수를 권유한다면 사기부터 의심!",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "비상장회사 재무현황·투자위험 등 사업정보",
+    "signals": [
+      "고수익",
+      "1:1 채팅"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=208844&menuNo=200204&pageIndex=3"
+  },
+  {
+    "year": 2025,
+    "no": 28,
+    "title": "(소비자경보 2025-28호) 쿠팡 개인정보 유출사고를 빙자한 보이스피싱·스미싱 피해사례가 확인됨에 따라 소비자경보를 상향합니다!!",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "명의도용"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=208247&menuNo=200204&pageIndex=3"
+  },
+  {
+    "year": 2025,
+    "no": 27,
+    "title": "(소비자경보 2025-27호) 쿠팡 개인정보 유출사고에 따른 보이스피싱·스미싱 등 피해에 주의하세요.",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=207853&menuNo=200204&pageIndex=3"
+  },
+  {
+    "year": 2025,
+    "no": 26,
+    "title": "(소비자경보 2025-26호) 누군가 해외주식 투자를 미끼로 당신의 재산을 노리고 있습니다.",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "고수익",
+      "SNS",
+      "리딩방"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=206466&menuNo=200204&pageIndex=3"
+  },
+  {
+    "year": 2025,
+    "no": 25,
+    "title": "(소비자경보 2025-25호) 국내 금을 기초자산으로 하는 금융상품 투자시 유의사항 안내 및 소비자경보 발령",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "투자상품의 기초자산(국내금·국제금) 추종 여부",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=205088&menuNo=200204&pageIndex=3"
+  },
+  {
+    "year": 2025,
+    "no": 24,
+    "title": "(소비자경보 2025-24호) 정부 행정정보시스템 장애와 관련한 금융회사 사칭 스미싱을 주의하세요!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭",
+      "카카오톡",
+      "명의도용"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=204285&menuNo=200204&pageIndex=3"
+  },
+  {
+    "year": 2025,
+    "no": 23,
+    "title": "(소비자경보 2025-23호) 교통사고 환자 유치를 통한 병·의원의 자동차 보험사기! 브로커의 은밀한 제안에는 단호하게 거절하세요",
+    "type": "보험",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=204284&menuNo=200204&pageIndex=3"
+  },
+  {
+    "year": 2025,
+    "no": 22,
+    "title": "(소비자경보 2025-22호) 2차 소비쿠폰 신청 문자에는 URL이 없습니다. 절대 클릭하지 마세요",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭",
+      "카카오톡",
+      "명의도용"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=202998&menuNo=200204&pageIndex=4"
+  },
+  {
+    "year": 2025,
+    "no": 21,
+    "title": "(소비자경보 2025-21호) 안전지대 없는 금융사기 - 금융회사 사칭 홈페이지, 이메일 주의하세요!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭",
+      "고수익"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=201823&menuNo=200204&pageIndex=4"
+  },
+  {
+    "year": 2025,
+    "no": 20,
+    "title": "(소비자경보 2025-20호) 박람회에서 가입하는 보험, 내게 필요한지 한 번 더 생각해보세요 - 박람회 현장에서의 보험상품 판매에 대한 소비자 경보 발령-",
+    "type": "보험",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=198970&menuNo=200204&pageIndex=4"
+  },
+  {
+    "year": 2025,
+    "no": 19,
+    "title": "(소비자경보 2025-19호) 투자 손실을 코인으로 보상해드립니다! - 공짜에 귀가 솔깃하신가요 사기범의 단골 멘트입니다! -",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "본문 미명시",
+    "signals": [
+      "사칭",
+      "고수익"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=197036&menuNo=200204&pageIndex=4"
+  },
+  {
+    "year": 2025,
+    "no": 18,
+    "title": "(소비자경보 2025-18호) 해외여행 후 남은 외화, 개인 간 온라인 거래 플랫폼에서 원화로 바꾸면 보이스피싱 범죄자금 세탁에 연루될 수 있습니다!",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=196033&menuNo=200204&pageIndex=4"
+  },
+  {
+    "year": 2025,
+    "no": 17,
+    "title": "(소비자경보 2025-17호) 민생회복 소비쿠폰 신청 문자에는 인터넷주소(URL)가 없습니다. 절대 클릭하지 마세요.",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭",
+      "카카오톡",
+      "명의도용"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=195831&menuNo=200204&pageIndex=4"
+  },
+  {
+    "year": 2025,
+    "no": 16,
+    "title": "(소비자경보 2025-16호) 멋진 이성이 SNS에서 당신에게 메시지를 보낼 확률은? -외국인 여자친구의 달콤한 코인 투자 권유-",
+    "type": "가상자산",
+    "prevention_possibility": "상",
+    "verification_target": "SNS·데이팅앱 상대방의 신원·실체",
+    "signals": [
+      "SNS",
+      "가짜 거래소"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=195522&menuNo=200204&pageIndex=4"
+  },
+  {
+    "year": 2025,
+    "no": 15,
+    "title": "(소비자경보 2025-15호) 비상장주식의 \"상장 임박\"을 미끼로 한 IPO 투자사기 주의보 발령",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "제도권 금융회사 여부·회사/사업 실체",
+    "signals": [
+      "사칭",
+      "고수익",
+      "1:1 채팅",
+      "상장 임박"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=194990&menuNo=200204&pageIndex=4"
+  },
+  {
+    "year": 2025,
+    "no": 14,
+    "title": "(소비자경보 2025-14호) 무료 재테크 교육 및 출석 지원금 등으로 접근한 후 가짜 가상자산거래소로 유인하는 사기에 주의하세요!",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "가상자산거래소 신고 여부",
+    "signals": [
+      "SNS",
+      "미신고",
+      "가짜 거래소",
+      "무료 재테크"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=194480&menuNo=200204&pageIndex=4"
+  },
+  {
+    "year": 2025,
+    "no": 13,
+    "title": "(소비자경보 2025-13호) 저금리 대출의 유혹, 최근 보이스피싱 피해자 10명중 4명은 대출빙자 사기에 당한다!",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=194207&menuNo=200204&pageIndex=4"
+  },
+  {
+    "year": 2025,
+    "no": 12,
+    "title": "(소비자경보 2025-12호) \"금융감독원의 가상자산 관련 외부평가위원 위촉?\" 개인정보를 요구하는 사칭 메일에 주의하세요!",
+    "type": "가상자산",
+    "prevention_possibility": "상",
+    "verification_target": "발신 이메일의 금감원 명의 진위",
+    "signals": [
+      "사칭"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=193735&menuNo=200204&pageIndex=5"
+  },
+  {
+    "year": 2025,
+    "no": 11,
+    "title": "(소비자경보 2025-11호) SNS상 대출·취업 게시글 등으로 허위환자를 모집하는 신종 보험사기 유혹에 속지마세요.",
+    "type": "대출사기",
+    "prevention_possibility": "상",
+    "verification_target": "대출·취업 게시글의 브로커·병원 연루 여부",
+    "signals": [
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=193563&menuNo=200204&pageIndex=5"
+  },
+  {
+    "year": 2025,
+    "no": 10,
+    "title": "(소비자경보 2025-10호) 몽골 'G은행'을 사칭한 고수익 해외채권 투자사기에 대한 소비자경보 발령",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "해외채권 판매업체의 국내 인가 여부",
+    "signals": [
+      "사칭",
+      "고수익",
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=193417&menuNo=200204&pageIndex=5"
+  },
+  {
+    "year": 2025,
+    "no": 9,
+    "title": "(소비자경보 2025-9호) 일부 소형 금융투자회사의 공모주 청약 대행 관련 소비자경보 발령",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "고수익",
+      "무인가"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=193323&menuNo=200204&pageIndex=5"
+  },
+  {
+    "year": 2025,
+    "no": 8,
+    "title": "(소비자경보 2025-8호) 유명인 무료강연을 활용한 브리핑 영업 방식 보험상품 판매에 대한 소비자 경보 발령",
+    "type": "보험",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=192672&menuNo=200204&pageIndex=5"
+  },
+  {
+    "year": 2025,
+    "no": 7,
+    "title": "(소비자경보 2025-7호) ‘달러채권 투자’로 고수익 실현이 가능하다고 유인하는 ‘글로벌 투자회사’ 사칭업자에 대한 소비자경보 발령!!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭",
+      "고수익"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=192292&menuNo=200204&pageIndex=5"
+  },
+  {
+    "year": 2025,
+    "no": 6,
+    "title": "(소비자경보 2025-6호) 가상자산 차익거래 등으로 수익을 낸다며 투자를 유도하는 불법 가상자산사업자를 조심하세요!",
+    "type": "가상자산",
+    "prevention_possibility": "상",
+    "verification_target": "가상자산사업자 신고 여부·제도권 금융회사 여부",
+    "signals": [
+      "고수익",
+      "유사수신",
+      "다단계"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=191833&menuNo=200204&pageIndex=5"
+  },
+  {
+    "year": 2025,
+    "no": 5,
+    "title": "(소비자경보 2025-5호) 노인복지사업 공공단체로 가장하여 노년층의 재산을 노리는 유사수신업체에 대한 소비자경보 발령!!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭",
+      "고수익",
+      "SNS",
+      "유사수신",
+      "원금보장"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=191754&menuNo=200204&pageIndex=5"
+  },
+  {
+    "year": 2025,
+    "no": 4,
+    "title": "(소비자경보 2025-4호) 금융회사 또는 가상자산사업자의 직원을 사칭하며 손실 보상금 명목으로 가짜 코인을 지급하는 사기에 현혹되지 마세요!",
+    "type": "가상자산",
+    "prevention_possibility": "상",
+    "verification_target": "가상자산사업자 신고 여부",
+    "signals": [
+      "사칭",
+      "미신고"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=191708&menuNo=200204&pageIndex=5"
+  },
+  {
+    "year": 2025,
+    "no": 3,
+    "title": "(소비자경보 2025-3호) 외화보험상품 가입시 소비자 유의사항 안내 및 소비자경보 발령",
+    "type": "보험",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=191499&menuNo=200204&pageIndex=5"
+  },
+  {
+    "year": 2025,
+    "no": 2,
+    "title": "(소비자경보 2025-2호) 고수익으로 현혹하며 신분증·위임장 등을 요구한다면 대출사기 가능성을 의심하세요!!!",
+    "type": "대출사기",
+    "prevention_possibility": "상",
+    "verification_target": "본인 명의 도용 여부",
+    "signals": [
+      "고수익",
+      "위임장",
+      "명의도용"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=191118&menuNo=200204&pageIndex=6"
+  },
+  {
+    "year": 2025,
+    "no": 1,
+    "title": "(소비자경보 2025-1호) 카드배송 사칭 보이스피싱 증가, 소비자경보 상향!!",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=191003&menuNo=200204&pageIndex=6"
+  },
+  {
+    "year": 2024,
+    "no": 38,
+    "title": "(소비자경보 2024-38호) \"금융감독원의 가상자산 불공정거래 관련 소명자료 요청?\" 사칭 메일에 주의하세요!",
+    "type": "가상자산",
+    "prevention_possibility": "상",
+    "verification_target": "발신 자료의 금감원 명의 진위",
+    "signals": [
+      "사칭"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=189130&menuNo=200204&pageIndex=6"
+  },
+  {
+    "year": 2024,
+    "no": 37,
+    "title": "(소비자경보 2024-37호) 2030 청년 구직자 대상 신종 보이스피싱 수법 소비자경보(주의) 발령!!!",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=189129&menuNo=200204&pageIndex=6"
+  },
+  {
+    "year": 2024,
+    "no": 36,
+    "title": "(소비자경보 2024-36호) 비상 계엄을 이유로 금감원의 자금출처 조사를 빙자하여 자금을 편취하는 불법 리딩방 사기를 조심하세요!",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "주식거래 앱의 진위",
+    "signals": [
+      "사칭",
+      "리딩방"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=188877&menuNo=200204&pageIndex=6"
+  },
+  {
+    "year": 2024,
+    "no": 35,
+    "title": "(소비자경보 2024-35호) 고령층을 대상으로 범죄에 연루되었다며 거액 주택담보대출을 유도하는 보이스피싱에 주의하세요!!",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=188873&menuNo=200204&pageIndex=6"
+  },
+  {
+    "year": 2024,
+    "no": 34,
+    "title": "(소비자경보 2024-34호) 해외여행시 신용카드 부정사용으로 인한 피해가 발생하지 않도록 주의하세요!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=188413&menuNo=200204&pageIndex=6"
+  },
+  {
+    "year": 2024,
+    "no": 33,
+    "title": "(소비자경보 2024-33호) '멕시코 회사채 투자'로 고수익 실현이 가능하다고 유혹하는 외국 금융회사 사칭 '불법 금융투자업자'를 주의하세요!",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "본문 미명시",
+    "signals": [
+      "사칭",
+      "고수익"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=188153&menuNo=200204&pageIndex=6"
+  },
+  {
+    "year": 2024,
+    "no": 32,
+    "title": "(소비자경보 2024-32호) 공개매수 관련 소비자경보 발령",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=187545&menuNo=200204&pageIndex=6"
+  },
+  {
+    "year": 2024,
+    "no": 31,
+    "title": "(소비자경보 2024-31호) 소액공모 투자에 대한 소비자 경보(주의) 발령",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "본문 미명시",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=138761&menuNo=200204&pageIndex=6"
+  },
+  {
+    "year": 2024,
+    "no": 30,
+    "title": "(소비자경보 2024-30호) 불법사채 해결 또는 대출중개를 명목으로 수수료를 요구하는 업체에 주의하세요!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=138123&menuNo=200204&pageIndex=7"
+  },
+  {
+    "year": 2024,
+    "no": 29,
+    "title": "(소비자경보 2024-29호) 보이스피싱 피해예방을 위해 꼭 알아두세요!!! - 안전한 금융거래를 위한 6가지 레시피 -",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭",
+      "단기간",
+      "비대면"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=137880&menuNo=200204&pageIndex=7"
+  },
+  {
+    "year": 2024,
+    "no": 28,
+    "title": "(소비자경보 2024-28호) 영업종료로 인한 가상자산 소각? 가상자산사업자 사칭 사기를 의심하세요!",
+    "type": "가상자산",
+    "prevention_possibility": "상",
+    "verification_target": "가상자산사업자 신고 여부",
+    "signals": [
+      "사칭",
+      "SNS",
+      "미신고",
+      "가짜 거래소"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=137879&menuNo=200204&pageIndex=7"
+  },
+  {
+    "year": 2024,
+    "no": 27,
+    "title": "(소비자경보 2024-27호) 티몬, 위메프 사태 관련 환불을 빙자한 개인정보 등 요구에 주의하세요!!!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=137561&menuNo=200204&pageIndex=7"
+  },
+  {
+    "year": 2024,
+    "no": 26,
+    "title": "(소비자경보 2024-26호) 커버드콜 ETF 명칭 및 수익구조에 대한 소비자 경보(주의) 발령",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=137457&menuNo=200204&pageIndex=7"
+  },
+  {
+    "year": 2024,
+    "no": 25,
+    "title": "(소비자경보 2024-25호) '저금리 대출', '고수익 보장' 등을 내세워 신용카드 결제를 유도하는 불법업체를 주의하세요!",
+    "type": "대출사기",
+    "prevention_possibility": "상",
+    "verification_target": "신용카드 결제 유도 업체의 정식 등록 여부",
+    "signals": [
+      "고수익",
+      "수익보장",
+      "복권",
+      "당첨"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=137386&menuNo=200204&pageIndex=7"
+  },
+  {
+    "year": 2024,
+    "no": 24,
+    "title": "(소비자경보 2024-24호) 고수익으로 현혹하며 개인 계좌로 입금을 유도하는 증권사 직원의 은밀한 제안에 유의하세요",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "고수익"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=137384&menuNo=200204&pageIndex=7"
+  },
+  {
+    "year": 2024,
+    "no": 23,
+    "title": "(소비자경보 2024-23호) \"금융감독원의 가상자산 관련 자료제출 요구?\" 그럴듯한 외형을 갖춘 사칭 메일에 주의하세요!",
+    "type": "가상자산",
+    "prevention_possibility": "상",
+    "verification_target": "발신 메일·링크의 금감원 명의 진위",
+    "signals": [
+      "사칭"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=137103&menuNo=200204&pageIndex=7"
+  },
+  {
+    "year": 2024,
+    "no": 22,
+    "title": "(소비자경보 2024-22호) 국내외 유명 투자전문가를 사칭하는 채팅App(오픈채팅방)의 해외주식 매수추천에 유의해주세요",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "본문 미명시",
+    "signals": [
+      "사칭",
+      "SNS",
+      "단기간",
+      "카카오톡"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=136616&menuNo=200204&pageIndex=7"
+  },
+  {
+    "year": 2024,
+    "no": 21,
+    "title": "(소비자경보 2024-21호) 부동산 펀드로 원금보장·고수익이 가능하다고 현혹하는 유사수신업체를 주의하세요!",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "업체의 제도권 금융회사 여부·온라인투자연계금융업 등록 여부",
+    "signals": [
+      "사칭",
+      "고수익",
+      "유사수신",
+      "원금보장"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=136576&menuNo=200204&pageIndex=7"
+  },
+  {
+    "year": 2024,
+    "no": 20,
+    "title": "(소비자경보 2024-20호) \"나스닥 상장\"으로 현혹하는 비상장주식 투자에 주의하세요",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "본문 미명시",
+    "signals": [
+      "고수익"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=136409&menuNo=200204&pageIndex=8"
+  },
+  {
+    "year": 2024,
+    "no": 19,
+    "title": "(소비자 경보 2024-19호) 피싱 사이트를 이용한 불법 금융투자 사기에 속지마세요!",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "제도권 금융회사 여부·송금계좌 명의",
+    "signals": [
+      "사칭",
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=136175&menuNo=200204&pageIndex=8"
+  },
+  {
+    "year": 2024,
+    "no": 18,
+    "title": "(소비자경보 2024-18호) 청년 정책금융상품 가입신청을 위장한 피싱사이트 소비자경보 주의 발령!!!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭",
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=135858&menuNo=200204&pageIndex=8"
+  },
+  {
+    "year": 2024,
+    "no": 17,
+    "title": "(소비자경보 2024-17호) 경영인정기보험 관련 불완전판매 우려 및 불건전 영업행위에 대한 소비자 경보 발령",
+    "type": "보험",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=135464&menuNo=200204&pageIndex=8"
+  },
+  {
+    "year": 2024,
+    "no": 16,
+    "title": "(소비자경보 2024-16호) 리딩방·로또 환불을 빙자한 코인 매수 제안을 조심하세요!",
+    "type": "가상자산",
+    "prevention_possibility": "상",
+    "verification_target": "거래소의 금융정보분석원 신고 여부",
+    "signals": [
+      "리딩방"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=135253&menuNo=200204&pageIndex=8"
+  },
+  {
+    "year": 2024,
+    "no": 15,
+    "title": "(소비자경보 2024-15호) 자유적금계좌 악용 온라인 중고거래 사기 소비자경보 발령!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=135252&menuNo=200204&pageIndex=8"
+  },
+  {
+    "year": 2024,
+    "no": 14,
+    "title": "(소비자경보 2024-14호) 수백~수천만원의 대출을 미끼로 한 초고금리 급전대출 사기에 속지 마세요!",
+    "type": "대출사기",
+    "prevention_possibility": "상",
+    "verification_target": "대출업체의 등록 여부",
+    "signals": [
+      "사칭"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=135056&menuNo=200204&pageIndex=8"
+  },
+  {
+    "year": 2024,
+    "no": 13,
+    "title": "(소비자경보 2024-13호) 실손 보상이 된다는 의사 말만 믿고 고가의 신의료기술 치료를 받았다가는 큰 낭패를 당할 수도 있습니다.",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=134999&menuNo=200204&pageIndex=8"
+  },
+  {
+    "year": 2024,
+    "no": 12,
+    "title": "(소비자경보 2024-12호) \"내가 쓰는 코인 거래소는 안전할까?\" 가짜 거래소를 이용한 가상자산 투자사기를 조심하세요!",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "가상자산 거래소의 신고 여부",
+    "signals": [
+      "사칭",
+      "SNS",
+      "리딩방",
+      "가짜 거래소"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=134974&menuNo=200204&pageIndex=8"
+  },
+  {
+    "year": 2024,
+    "no": 11,
+    "title": "(소비자경보 2024-11호) 최근 일부 보험상품 불완전판매 우려 및 절판마케팅 등 과당경쟁에 대한 소비자 경보 발령",
+    "type": "보험",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=134825&menuNo=200204&pageIndex=8"
+  },
+  {
+    "year": 2024,
+    "no": 10,
+    "title": "(소비자경보 2024-10호) '연금형 달러 펀드'로 고수익을 올릴 수 있다고 유혹하는 외국 금융회사 사칭 '불법 금융투자업자'를 주의하세요!",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "송금 계좌의 명의",
+    "signals": [
+      "사칭",
+      "고수익",
+      "단기간"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=134821&menuNo=200204&pageIndex=9"
+  },
+  {
+    "year": 2024,
+    "no": 9,
+    "title": "(소비자경보 2024-9호) 민생금융지원 이자환금·대환대출을 미끼로 한 보이스피싱 소비자경보 발령!!!",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=133845&menuNo=200204&pageIndex=9"
+  },
+  {
+    "year": 2024,
+    "no": 8,
+    "title": "(소비자경보 2024-8호) 혁신금융사업자 사칭 업체에 대한 소비자 경보 발령",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭",
+      "고수익"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=133567&menuNo=200204&pageIndex=9"
+  },
+  {
+    "year": 2024,
+    "no": 7,
+    "title": "(소비자경보 2024-7호) 불법 채권추심 관련 금융소비자 경보 3차 발령!!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=133491&menuNo=200204&pageIndex=9"
+  },
+  {
+    "year": 2024,
+    "no": 6,
+    "title": "(소비자경보 2024-6호) 가짜 주식거래 앱 설치를 유도하는 금융투자 사기를 조심하세요!",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "주식거래 앱의 진위·공식 여부",
+    "signals": [
+      "사칭",
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=133479&menuNo=200204&pageIndex=9"
+  },
+  {
+    "year": 2024,
+    "no": 5,
+    "title": "(소비자경보 2024-5호) 미신고(불법) 거래소를 통한 투자권유, 투자금만 받고 출금은 거부하는 사기일 가능성이 높습니다",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "거래소의 금융정보분석원 신고 여부",
+    "signals": [
+      "SNS",
+      "미신고"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=133287&menuNo=200204&pageIndex=9"
+  },
+  {
+    "year": 2024,
+    "no": 4,
+    "title": "(소비자경보 2024-4호) 대환대출, 정부지원 전세자금대출을 빙자한 보이스피싱 소비자경보 발령!!!",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=133196&menuNo=200204&pageIndex=9"
+  },
+  {
+    "year": 2024,
+    "no": 3,
+    "title": "(소비자경보 2024-3호) 거래소에 상장된 인지도 높은 코인의 저가매수 기회, 가짜코인을 통한 사기일 가능성이 높습니다",
+    "type": "가상자산",
+    "prevention_possibility": "상",
+    "verification_target": "가짜코인 여부(거래소 상장 정보의 진위)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=133180&menuNo=200204&pageIndex=9"
+  },
+  {
+    "year": 2024,
+    "no": 2,
+    "title": "(소비자경보 2024-2호) 정부부처·유관기관 직원을 사칭한 스미싱 소비자 경보 발령!!!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭",
+      "SNS",
+      "카카오톡"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=133127&menuNo=200204&pageIndex=9"
+  },
+  {
+    "year": 2024,
+    "no": 1,
+    "title": "(소비자경보 2024-1호) 연초에 많이 발생하는 카드발급, 연말정산, 합격문자 등 보이스피싱 사기 수법, 늘. 꼭. 또 하세요!",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "명의도용"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=132744&menuNo=200204&pageIndex=9"
+  },
+  {
+    "year": 2023,
+    "no": 26,
+    "title": "(소비자경보 2023-26호) 온라인 커뮤니티상 불법금융 유혹에 현혹되면 한순간에 불법사채의 굴레에 빠지거나 범죄자로 전락할 수 있습니다!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "고수익"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=132564&menuNo=200204&pageIndex=10"
+  },
+  {
+    "year": 2023,
+    "no": 25,
+    "title": "(소비자경보 2023-25호) 회사를 사칭한 IPO 공모주 청약 사기 주의",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=132425&menuNo=200204&pageIndex=10"
+  },
+  {
+    "year": 2023,
+    "no": 24,
+    "title": "(소비자경보 2023-24호) 신용카드 리볼빙 이용시 다음 사항을 주의하세요! - 소비자경보 「주의」 발령 -",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=132250&menuNo=200204&pageIndex=10"
+  },
+  {
+    "year": 2023,
+    "no": 23,
+    "title": "(소비자경보 2023-23호) 「불법적인 채권추심 관련 금융소비자 주의사항」 금융소비자 2차 경보 발령!!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=132078&menuNo=200204&pageIndex=10"
+  },
+  {
+    "year": 2023,
+    "no": 22,
+    "title": "(소비자경보 2023-22호) 불법 채권추심 관련 금융소비자 경보 발령!!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=131585&menuNo=200204&pageIndex=10"
+  },
+  {
+    "year": 2023,
+    "no": 21,
+    "title": "(소비자경보 2023-21호) 자동차 정비업체 이용 시 보험사기에 연루되지 않도록 주의하세요!",
+    "type": "보험",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=130899&menuNo=200204&pageIndex=10"
+  },
+  {
+    "year": 2023,
+    "no": 20,
+    "title": "(소비자경보 2023-20호) 임플란트, 레진 등 일상화된 치과치료 관련 보험사기에 연루되지 않도록 주의하세요!",
+    "type": "보험",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=130063&menuNo=200204&pageIndex=10"
+  },
+  {
+    "year": 2023,
+    "no": 19,
+    "title": "(소비자경보 2023-19호) 고수익 보장, 특별 저가 매수 기회 등으로 투자자를 현혹하는 가상자산 투자권유, 사기일 가능성이 높습니다",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "가상자산사업자 신고 여부",
+    "signals": [
+      "사칭",
+      "고수익",
+      "유사수신"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=129530&menuNo=200204&pageIndex=10"
+  },
+  {
+    "year": 2023,
+    "no": 18,
+    "title": "(소비자경보 2023-18호) 소상공인 정책대출을 미끼로 자영업자를 보이스피싱 전달책으로 유인하는 사례에 유의하세요!!!",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=129476&menuNo=200204&pageIndex=10"
+  },
+  {
+    "year": 2023,
+    "no": 17,
+    "title": "(소비자경보 2023-17호) '정부지원', '서민금융' 등을 사칭한 불법광고 소비자 경보 발령",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭",
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=128372&menuNo=200204&pageIndex=10"
+  },
+  {
+    "year": 2023,
+    "no": 16,
+    "title": "(소비자경보 2023-16호) 도수치료를 가장한 성형, 피부미용 시술 증가, 보험사기에 연루되지 않도록 각별한 주의 당부",
+    "type": "보험",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=128171&menuNo=200204&pageIndex=11"
+  },
+  {
+    "year": 2023,
+    "no": 15,
+    "title": "(소비자경보 2023-15호) 최근 주요 민원사례로 알아보는 소비자 유의사항(중소서민)",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=127923&menuNo=200204&pageIndex=11"
+  },
+  {
+    "year": 2023,
+    "no": 14,
+    "title": "(소비자경보 2023-14호) '22년 주요 민원사례로 알아보는 소비자 유의사항(금투)",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=127780&menuNo=200204&pageIndex=11"
+  },
+  {
+    "year": 2023,
+    "no": 13,
+    "title": "(소비자경보 2023-13호) 해외여행시 카드 도난분실, 위변조 등으로 인한 피해를 조심하세요!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=127738&menuNo=200204&pageIndex=11"
+  },
+  {
+    "year": 2023,
+    "no": 12,
+    "title": "(소비자경보 2023-12호) '22년 주요 민원사례로 알아보는 소비자 유의사항(생명보험)",
+    "type": "보험",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=127635&menuNo=200204&pageIndex=11"
+  },
+  {
+    "year": 2023,
+    "no": 11,
+    "title": "(소비자경보 2023-11호) '22년 주요 민원사례로 알아보는 소비자 유의사항(은행)",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=127491&menuNo=200204&pageIndex=11"
+  },
+  {
+    "year": 2023,
+    "no": 10,
+    "title": "(소비자경보 2023-10호) 카카오톡 채널을 이용한 은행사칭 피싱에 대한 소비자 경보 발령!!!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭",
+      "SNS",
+      "카카오톡"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=127053&menuNo=200204&pageIndex=11"
+  },
+  {
+    "year": 2023,
+    "no": 9,
+    "title": "(소비자경보 2023-9호) 택배회사, 정부기관 등을 사칭한 보이스피싱 경보 발령!!!",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=58380&menuNo=200204&pageIndex=11"
+  },
+  {
+    "year": 2023,
+    "no": 8,
+    "title": "(소비자경보 2023-8호) 온라인 쇼핑몰 이용 시 카드정보 등 개인정보 유출에 주의하세요!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=58303&menuNo=200204&pageIndex=11"
+  },
+  {
+    "year": 2023,
+    "no": 7,
+    "title": "(소비자경보 2023-7호) ‘금융당국 명의의 가짜 문서’를 보여주면서 과거 ’투자 손실에 대한 보상’을 미끼로 ‘가상자산 투자’를 권하는 불법 유사수신 등에 유의하세요!",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "제도권 금융회사 사칭 여부",
+    "signals": [
+      "사칭",
+      "고수익",
+      "SNS",
+      "유사수신",
+      "리딩방",
+      "카카오톡"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=58286&menuNo=200204&pageIndex=11"
+  },
+  {
+    "year": 2023,
+    "no": 6,
+    "title": "(소비자경보 2023-6호) 종신보험은 상담과정에서부터 충분한 설명을 요청하여 듣고, 이해한 후 가입여부를 결정하세요",
+    "type": "보험",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=58179&menuNo=200204&pageIndex=12"
+  },
+  {
+    "year": 2023,
+    "no": 5,
+    "title": "(소비자경보 2023-5호) 운전자보험, 잘 알고 가입하세요!(소비자 유의사항)",
+    "type": "보험",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=58170&menuNo=200204&pageIndex=12"
+  },
+  {
+    "year": 2023,
+    "no": 4,
+    "title": "(소비자경보 2023-4호) 해외 증권시장 상장시 고수익 등을 미끼로 해외 비상장주식 투자를 권유하는 투자사기에 주의하세요",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "해외 비상장주식의 상장가능 여부·공시정보",
+    "signals": [
+      "고수익"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=58083&menuNo=200204&pageIndex=12"
+  },
+  {
+    "year": 2023,
+    "no": 3,
+    "title": "(소비자경보 2023-3호) '유명 연예인'을 내세우면서, '플랫폼, NFT 투자' 등을 통해 '고수익이 가능하다'고 유혹하는 불법 자금모집 업체를 주의하세요!",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "제도권 금융회사 여부",
+    "signals": [
+      "고수익",
+      "유사수신",
+      "다단계"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=58082&menuNo=200204&pageIndex=12"
+  },
+  {
+    "year": 2023,
+    "no": 2,
+    "title": "(소비자경보 2023-2호) 공공요금 인상을 악용하여 허위 정책자금대출을 빙자한 보이스피싱 소비자 경보 발령!!!",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭",
+      "비대면"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=58072&menuNo=200204&pageIndex=12"
+  },
+  {
+    "year": 2023,
+    "no": 1,
+    "title": "(소비자경보 2023-1호) 유튜브를 악용한 은행 사칭 피싱사이트 경보 발령!!!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=58037&menuNo=200204&pageIndex=12"
+  },
+  {
+    "year": 2022,
+    "no": 19,
+    "title": "(소비자경보 2022-19호) ‘투자손실 보상’, ‘고수익 보장’, ‘고급정보 제공’ 등에 현혹되어 투자하는 경우 일시에 모든 재산을 잃을 수 있습니다!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "고수익"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=57705&menuNo=200204&pageIndex=12"
+  },
+  {
+    "year": 2022,
+    "no": 18,
+    "title": "(소비자경보 2022-18호) 신문 등 언론매체를 이용한 비상장주식 투자권유 주의",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "비상장주식 발행사의 증권신고서·소액공모공시서류 제출 여부",
+    "signals": [
+      "고수익",
+      "SNS",
+      "무인가"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=57649&menuNo=200204&pageIndex=12"
+  },
+  {
+    "year": 2022,
+    "no": 17,
+    "title": "(소비자경보 2022-17호) 대학입시 및 연말정산 등을 빙자한 보이스피싱 경보 발령!!!",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=57472&menuNo=200204&pageIndex=12"
+  },
+  {
+    "year": 2022,
+    "no": 16,
+    "title": "(소비자경보 2022-16호) NHN페이코 서명키 유출 관련, 정상적이지 않은 경로를 통한 스마트폰 앱 설치시 주의하세요!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=57471&menuNo=200204&pageIndex=12"
+  },
+  {
+    "year": 2022,
+    "no": 15,
+    "title": "(소비자경보 2022-15호) '22년 상반기 신속민원 처리결과 소비자 유의사항(중소서민) - 주요 민원사례로 알아보는 채권추심 관련 유의사항 -",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=57245&menuNo=200204&pageIndex=13"
+  },
+  {
+    "year": 2022,
+    "no": 14,
+    "title": "(소비자경보 2022-14호) '22년 상반기 신속민원 처리결과 소비자 유의사항(금융투자) - 주요 민원사례로 알아보는 금융투자상품 거래 시 유의사항 -",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "본문 미명시",
+    "signals": [
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=57243&menuNo=200204&pageIndex=13"
+  },
+  {
+    "year": 2022,
+    "no": 13,
+    "title": "(소비자경보 2022-13호) 가족·친구 등 지인을 사칭한 메신저피싱 및 정부지원 대출·채무조정 등을 빙자한 보이스피싱 경보 발령!!!",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭",
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=57029&menuNo=200204&pageIndex=13"
+  },
+  {
+    "year": 2022,
+    "no": 12,
+    "title": "(소비자경보 2022-12호) ’22년 상반기 신속민원 처리결과 소비자 유의사항(손해보험) - 주요 민원사례로 알아보는 손해보험 가입시 유의사항 -",
+    "type": "보험",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=56915&menuNo=200204&pageIndex=13"
+  },
+  {
+    "year": 2022,
+    "no": 11,
+    "title": "(소비자경보 2022-11호) 대리입금 광고에 현혹되면 고금리·불법 채권추심·협박 등의 위험에 무방비로 노출되니 각별히 주의하시기 바랍니다.",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=56914&menuNo=200204&pageIndex=13"
+  },
+  {
+    "year": 2022,
+    "no": 10,
+    "title": "(소비자경보 2022-10호) 불법금융광고에 현혹되면 나도 모르게 범죄자가 될 수 있습니다.",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=56828&menuNo=200204&pageIndex=13"
+  },
+  {
+    "year": 2022,
+    "no": 9,
+    "title": "(소비자경보 2022-9호) '22년 상반기 신속민원 처리결과 소비자 유의사항(생명보험) - 주요 민원사례로 알아보는 생명보험 가입시 유의사항 -",
+    "type": "보험",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=56781&menuNo=200204&pageIndex=13"
+  },
+  {
+    "year": 2022,
+    "no": 8,
+    "title": "(소비자경보 2022-8호) '22년 상반기 신속민원 처리결과 소비자 유의사항(은행) - 개인형퇴직연금(IRP) 계좌개설 및 운용 시 유의사항",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=56678&menuNo=200204&pageIndex=13"
+  },
+  {
+    "year": 2022,
+    "no": 7,
+    "title": "(소비자경보 2022-7호) 병원과 브로커의 불법 제안에 현혹되어 보험사기에 연루되지 않도록 주의하세요! - 소비자경보 「주의」 발령",
+    "type": "보험",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=56606&menuNo=200204&pageIndex=13"
+  },
+  {
+    "year": 2022,
+    "no": 6,
+    "title": "(소비자경보 2022-6호) 대학생 청년층, 사기성 작업대출의 피해자가 되지 않도록 주의",
+    "type": "대출사기",
+    "prevention_possibility": "상",
+    "verification_target": "본문 미명시",
+    "signals": [
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=55811&menuNo=200204&pageIndex=13"
+  },
+  {
+    "year": 2022,
+    "no": 5,
+    "title": "(소비자경보 2022-5호) 조각투자에 대한 소비자경보 발령(주의)",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "본문 미명시",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=55458&menuNo=200204&pageIndex=14"
+  },
+  {
+    "year": 2022,
+    "no": 4,
+    "title": "(소비자경보 2022-4호) 현장 방문을 통한 휴대폰 개통시 계좌 비밀번호 등을 알려달라는 사기를 주의하세요!!! - 소비자경보 \"주의\" 발령!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=55217&menuNo=200204&pageIndex=14"
+  },
+  {
+    "year": 2022,
+    "no": 3,
+    "title": "(소비자경보 2022-3호) 원자재 ETF·ETN 투자유의 관련 소비자경보 발령",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "본문 미명시",
+    "signals": [
+      "단기간"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=55167&menuNo=200204&pageIndex=14"
+  },
+  {
+    "year": 2022,
+    "no": 2,
+    "title": "(소비자경보 2022-2호) 코로나19 관련 자가검사키트 공급·구매 및 정책지원금 안내 등을 사칭한 보이스피싱 경보 발령!!!",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=55002&menuNo=200204&pageIndex=14"
+  },
+  {
+    "year": 2022,
+    "no": 1,
+    "title": "(소비자경보 2022-1호) 브로커 조직이 유인하는 실손의료보험사기에 유의하세요",
+    "type": "보험",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=54778&menuNo=200204&pageIndex=14"
+  },
+  {
+    "year": 2021,
+    "no": 16,
+    "title": "(소비자경보 2021-16호) 유니버셜 보험 가입시 소비자 유의사항 (소비자경보 발령)",
+    "type": "보험",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34916&menuNo=200204&pageIndex=14"
+  },
+  {
+    "year": 2021,
+    "no": 15,
+    "title": "(소비자경보 2021-15호) 우대금리 금융상품 가입시 소비자 유의사항 - 소비자경보",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34915&menuNo=200204&pageIndex=14"
+  },
+  {
+    "year": 2021,
+    "no": 14,
+    "title": "(소비자경보 2021-14호) 주식신용거래에 따른 투자위험에 대한 소비자경보 발령",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34914&menuNo=200204&pageIndex=14"
+  },
+  {
+    "year": 2021,
+    "no": 13,
+    "title": "(소비자경보 2021-13호) 신기술조합 투자(출자)는 위험이 매우 큰 투자이므로, 판매 증권사를 통해 투자 관련 정보를 충분히 확인하세요-소비자경보 '주의' 발령 및 행정지도 예고",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "신기술조합 투자정보·판매사 설명의무 이행 여부",
+    "signals": [
+      "고수익"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34913&menuNo=200204&pageIndex=14"
+  },
+  {
+    "year": 2021,
+    "no": 12,
+    "title": "(소비자경보 2021-12호) 신용카드 리볼빙 가입 및 이용시 유의하세요",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34912&menuNo=200204&pageIndex=14"
+  },
+  {
+    "year": 2021,
+    "no": 11,
+    "title": "(소비자경보 2021-11호) 체증형 종신보험 가입시 유의하세요! (소비자경보 발령)",
+    "type": "보험",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34911&menuNo=200204&pageIndex=15"
+  },
+  {
+    "year": 2021,
+    "no": 10,
+    "title": "(소비자경보 2021-10호) 금융감독원을 사칭한 개인정보 탈취 보이스피싱 사기문자 소비자경보 발령!!!",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭",
+      "비대면"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34910&menuNo=200204&pageIndex=15"
+  },
+  {
+    "year": 2021,
+    "no": 9,
+    "title": "(소비자경보 2021-9호) 재난지원금 및 소상공인 정책자금 등 정부의 자금지원을 빙자한 대출사기 문자 소비자경보 발령!!!",
+    "type": "대출사기",
+    "prevention_possibility": "상",
+    "verification_target": "대출사기 문자의 발신번호·URL 진위",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34909&menuNo=200204&pageIndex=15"
+  },
+  {
+    "year": 2021,
+    "no": 8,
+    "title": "(소비자경보 2021-8호) 2030 대상 취업 미끼 비대면 대출 사기, '소비자경보' 발령",
+    "type": "대출사기",
+    "prevention_possibility": "상",
+    "verification_target": "채용업체의 사업자등록번호·사업장 주소·정상업체 여부",
+    "signals": [
+      "SNS",
+      "비대면"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34908&menuNo=200204&pageIndex=15"
+  },
+  {
+    "year": 2021,
+    "no": 7,
+    "title": "(소비자경보 2021-7호) 증권사 전산장애 발생시 반드시 3가지를 기억하세요!(소비자경보 '주의' 발령)",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34907&menuNo=200204&pageIndex=15"
+  },
+  {
+    "year": 2021,
+    "no": 6,
+    "title": "(소비자경보 2021-6호) 종신보험은 사회초년생의 목돈 마련에 적합하지 않습니다!-소비자경보 '주의' 발령",
+    "type": "보험",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34906&menuNo=200204&pageIndex=15"
+  },
+  {
+    "year": 2021,
+    "no": 5,
+    "title": "(소비자경보 2021-5호) 할부금을 대신 갚아주겠다는 중고차 대출 금융사기를 주의하세요!, 소비자경보 '주의' 발령!",
+    "type": "대출사기",
+    "prevention_possibility": "상",
+    "verification_target": "명의대여 요청의 정당성(중고차 대출)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34905&menuNo=200204&pageIndex=15"
+  },
+  {
+    "year": 2021,
+    "no": 4,
+    "title": "(소비자경보 2021-4호) 종신보험 갈아타기(종신보험 리모델링) 소비자경보 '주의' 발령",
+    "type": "보험",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34904&menuNo=200204&pageIndex=15"
+  },
+  {
+    "year": 2021,
+    "no": 3,
+    "title": "(소비자경보 2021-3호) '주식 리딩방' 근절을 위한 투자자 Check Point 3가지 - 소비자경보 「주의」 발령",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "제도권 금융회사 여부·미등록 투자자문 여부",
+    "signals": [
+      "리딩방",
+      "카카오톡",
+      "수익보장",
+      "손실보전"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34903&menuNo=200204&pageIndex=15"
+  },
+  {
+    "year": 2021,
+    "no": 2,
+    "title": "(소비자경보 2021-2호) 4차 재난지원금 지급 및 백신 접종을 빙자한 보이스피싱 경보!",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭",
+      "비대면"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34902&menuNo=200204&pageIndex=15"
+  },
+  {
+    "year": 2021,
+    "no": 1,
+    "title": "(소비자경보 2021-1호) 신분증, 카드번호 등 개인(신용)정보를 요구하는 보이스피싱 경보!",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭",
+      "비대면"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34901&menuNo=200204&pageIndex=16"
+  },
+  {
+    "year": 2020,
+    "no": 19,
+    "title": "(소비자경보 2020-19호) SNS 단체대화방을 통해 높은 수익률을 제시하는 금융투자업 위장업체들을 조심하세요!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "고수익",
+      "SNS",
+      "무인가"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34900&menuNo=200204&pageIndex=16"
+  },
+  {
+    "year": 2020,
+    "no": 18,
+    "title": "(소비자경보 2020-18호) 금융감독원을 사칭하여 추가 신규대출은 금융법위반이라며 자금을 편취하는 보이스피싱 주의 경보!",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34899&menuNo=200204&pageIndex=16"
+  },
+  {
+    "year": 2020,
+    "no": 17,
+    "title": "(소비자경보 2020-17호) 원금과 고수익을 동시에 보장한다고 유혹하는 유사수신 업체 투자권유를 조심하세요.",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "고수익",
+      "유사수신",
+      "원금보장",
+      "다단계"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34898&menuNo=200204&pageIndex=16"
+  },
+  {
+    "year": 2020,
+    "no": 16,
+    "title": "(소비자경보 2020-16호) 외화보험 가입시 소비자 핵심 유의사항 4가지,이것만은 기억하세요! – 소비자경보「주의」발령",
+    "type": "보험",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "고수익"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34897&menuNo=200204&pageIndex=16"
+  },
+  {
+    "year": 2020,
+    "no": 15,
+    "title": "(소비자경보 2020-15호) 중고차 리스시 리스료 대납 사기를 주의하세요! - 소비자경보「주의」발령!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34896&menuNo=200204&pageIndex=16"
+  },
+  {
+    "year": 2020,
+    "no": 14,
+    "title": "(소비자경보 2020-14호) 신분증·카드번호를 요구하는 자녀 사칭형 보이스피싱 경보!",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34895&menuNo=200204&pageIndex=16"
+  },
+  {
+    "year": 2020,
+    "no": 13,
+    "title": "(소비자경보 2020-13호) 90년대생 청년층, 대출수수료 30% 사기 작업대출에 유의하세요",
+    "type": "대출사기",
+    "prevention_possibility": "상",
+    "verification_target": "소득증빙서류의 진위 여부",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34894&menuNo=200204&pageIndex=16"
+  },
+  {
+    "year": 2020,
+    "no": 12,
+    "title": "(소비자경보 2020-12호) 나도 모르게 대포통장(사기이용계좌) 범죄자가 될 수 있으니 조심하세요!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "대포통장"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34893&menuNo=200204&pageIndex=16"
+  },
+  {
+    "year": 2020,
+    "no": 11,
+    "title": "(소비자경보 2020-11호) 주식 리딩방에 대한 각별한 주의가 필요한 시점입니다.",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "본문 미명시",
+    "signals": [
+      "리딩방"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34892&menuNo=200204&pageIndex=16"
+  },
+  {
+    "year": 2020,
+    "no": 10,
+    "title": "(소비자경보 2020-10호) 금융상품을 가장한 온라인 사설 FX마진 거래에 주의하세요 !",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34891&menuNo=200204&pageIndex=17"
+  },
+  {
+    "year": 2020,
+    "no": 9,
+    "title": "(소비자경보 2020-09호) 역외보험 가입을 권유받을 때 주의하세요! - 소비자경보(주의) 발령",
+    "type": "보험",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34890&menuNo=200204&pageIndex=17"
+  },
+  {
+    "year": 2020,
+    "no": 6,
+    "title": "(소비자경보 2020-06호) 레버리지 WTI원유 선물 ETN 관련 소비자경보 발령",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34887&menuNo=200204&pageIndex=17"
+  },
+  {
+    "year": 2020,
+    "no": 5,
+    "title": "(소비자경보 2020-05호) 소상공인 대상 금융지원 등을 가장한 보이스피싱 주의!",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "비대면"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34886&menuNo=200204&pageIndex=17"
+  },
+  {
+    "year": 2020,
+    "no": 4,
+    "title": "(소비자경보 2020-04호) 코로나19 상황을 틈탄 불법대출광고 소비자피해 주의 경보",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭",
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34885&menuNo=200204&pageIndex=17"
+  },
+  {
+    "year": 2020,
+    "no": 3,
+    "title": "(소비자경보 2020-03호) P2P 투자하기 전, 투자자 유의사항을 꼭 확인하세요",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "P2P 업체의 금융위 등록 여부·협회 재무공시자료·공시사항",
+    "signals": [
+      "고수익",
+      "원금보장"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34884&menuNo=200204&pageIndex=17"
+  },
+  {
+    "year": 2020,
+    "no": 2,
+    "title": "(소비자경보 2020-02호) 코로나19관련 마스크・손 소독제 물품구매를 사칭한 보이스피싱 피해사례 발생!",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34883&menuNo=200204&pageIndex=17"
+  },
+  {
+    "year": 2020,
+    "no": 1,
+    "title": "(소비자경보 2020-01호) 신용카드를 이용한 지방세 등 대납사기를 조심하세요!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34882&menuNo=200204&pageIndex=17"
+  },
+  {
+    "year": 2019,
+    "no": 4,
+    "title": "(소비자경보 2019-04호) 공공기관, 은행 등을 사칭한 불법대출 문자메시지 소비자 피해 주의 경보",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34881&menuNo=200204&pageIndex=18"
+  },
+  {
+    "year": 2019,
+    "no": 3,
+    "title": "(소비자경보 2019-03호) 해외송금 알바를 가장한 보이스피싱 피해금 인출책 모집광고를 조심하세요!",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34880&menuNo=200204&pageIndex=18"
+  },
+  {
+    "year": 2019,
+    "no": 2,
+    "title": "(소비자경보 2019-02호) 안전한 P2P투자를 위한 투자자 유의사항",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "P2P 업체의 등록 여부·평판 정보·공시사항",
+    "signals": [
+      "고수익",
+      "원금보장"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34879&menuNo=200204&pageIndex=18"
+  },
+  {
+    "year": 2019,
+    "no": 1,
+    "title": "(소비자경보 2019-01호) 계약해지 시 해지환급금이 없거나 적은 보험상품 가입 시 주의하세요!",
+    "type": "보험",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34878&menuNo=200204&pageIndex=18"
+  },
+  {
+    "year": 2018,
+    "no": 6,
+    "title": "(소비자경보 2018-06호) 유사투자자문 피해신고 급증, 금융소비자 주의 필요!",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "유사투자자문업체 피해 신고 경로",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34877&menuNo=200204&pageIndex=18"
+  },
+  {
+    "year": 2018,
+    "no": 5,
+    "title": "(소비자경보 2018-05호) 금감원을 사칭하는 가짜 이메일 피싱(Email-phishing)에 주의!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭",
+      "유사수신"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34876&menuNo=200204&pageIndex=18"
+  },
+  {
+    "year": 2018,
+    "no": 4,
+    "title": "(소비자경보 2018-04호) 주식·선물 거래를 가장한 도박형 사기 사이트 주의! - 소비자경보“주의”발령!",
+    "type": "투자사기",
+    "prevention_possibility": "상",
+    "verification_target": "거래업체의 제도권 금융회사(금융위 인가) 여부",
+    "signals": [
+      "고수익",
+      "단기간",
+      "묻지마"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34875&menuNo=200204&pageIndex=18"
+  },
+  {
+    "year": 2018,
+    "no": 3,
+    "title": "(소비자경보 2018-03호) 가짜 서울중앙지검 홈페이지 이용 검사 사칭 보이스피싱 주의, 소비자경보 발령",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34874&menuNo=200204&pageIndex=18"
+  },
+  {
+    "year": 2018,
+    "no": 2,
+    "title": "(소비자경보 2018-02호) 지인사칭 메신저피싱 등 주의, 소비자경보 '경고' 발령",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭",
+      "SNS"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34873&menuNo=200204&pageIndex=18"
+  },
+  {
+    "year": 2018,
+    "no": 1,
+    "title": "(소비자경보 2018-01호) 고위험 ETF 은행신탁상품 투자 관련 소비자경보 발령",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34872&menuNo=200204&pageIndex=18"
+  },
+  {
+    "year": 2017,
+    "no": 10,
+    "title": "(소비자경보 2017-10호) 대출권유 전화를 받으면 보이스피싱 여부를 우선 확인해보세요",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭",
+      "대포통장"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34871&menuNo=200204&pageIndex=19"
+  },
+  {
+    "year": 2017,
+    "no": 9,
+    "title": "(소비자경보 2017-9호) 젊은 여성 표적 보이스피싱 기승, 소비자경보 경고로 격상!",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34870&menuNo=200204&pageIndex=19"
+  },
+  {
+    "year": 2017,
+    "no": 8,
+    "title": "(소비자경보 2017-8호) 첨단 수법으로 무장한 신종 보이스피싱 유의",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34869&menuNo=200204&pageIndex=19"
+  },
+  {
+    "year": 2017,
+    "no": 7,
+    "title": "(소비자경보 2017-7호) 인터넷은행을 사칭하는 에스뱅크에 주의",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭",
+      "SNS",
+      "비대면"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34868&menuNo=200204&pageIndex=19"
+  },
+  {
+    "year": 2017,
+    "no": 6,
+    "title": "(소비자경보 2017-06호) 여름휴가철을 맞이하여 보이스피싱 사기 증가 우려 !",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34867&menuNo=200204&pageIndex=19"
+  },
+  {
+    "year": 2017,
+    "no": 5,
+    "title": "(소비자경보 2017-05호) 가짜 ｢햇살저축은행｣을 주의하세요, 소비자경보 발령!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34866&menuNo=200204&pageIndex=19"
+  },
+  {
+    "year": 2017,
+    "no": 4,
+    "title": "(소비자경보 2017-04호) 금감원을 사칭하는 가짜 이메일 피싱(Email-phishing)에 주의 !",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34865&menuNo=200204&pageIndex=19"
+  },
+  {
+    "year": 2017,
+    "no": 3,
+    "title": "(소비자경보 2017-03호) 문자메시지 유포를 통한 주식 불공정거래의 현황 및 대응",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34864&menuNo=200204&pageIndex=19"
+  },
+  {
+    "year": 2017,
+    "no": 2,
+    "title": "(소비자 경보 2017-02호) 젊은 여성을 표적으로 하는 보이스피싱 급증, 소비자경보 발령",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34863&menuNo=200204&pageIndex=19"
+  },
+  {
+    "year": 2017,
+    "no": 1,
+    "title": "(소비자경보 2017-01호) 통장을 빌려주면 돈을 준다는 불법 문자메시지 급증",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34862&menuNo=200204&pageIndex=19"
+  },
+  {
+    "year": 2016,
+    "no": 8,
+    "title": "(소비자경보 2016-08호) 증권회사와의 거래는 반드시 본인계좌를 이용할 필요",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34861&menuNo=200204&pageIndex=20"
+  },
+  {
+    "year": 2016,
+    "no": 7,
+    "title": "(소비자경보 2016-07호) 가짜 저축은행 홈페이지를 이용한 보이스피싱 유행",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34860&menuNo=200204&pageIndex=20"
+  },
+  {
+    "year": 2016,
+    "no": 6,
+    "title": "(소비자경보 2016-06호) 채무상환요구를 가족에게 하는 것은 불법입니다!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34859&menuNo=200204&pageIndex=20"
+  },
+  {
+    "year": 2016,
+    "no": 5,
+    "title": "(소비자경보 2016-05호) 온라인에서 상품권 직거래시 신종 금융사기에 유의하세요!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34858&menuNo=200204&pageIndex=20"
+  },
+  {
+    "year": 2016,
+    "no": 4,
+    "title": "(소비자경보 2016-04호) 신종 대포통장 모집 수법 안내",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "대포통장"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34857&menuNo=200204&pageIndex=20"
+  },
+  {
+    "year": 2016,
+    "no": 3,
+    "title": "(소비자경보 2016-03호) 취업을 미끼로 한 보이스피싱에 주의하세요!",
+    "type": "보이스피싱",
+    "prevention_possibility": "상",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34856&menuNo=200204&pageIndex=20"
+  },
+  {
+    "year": 2016,
+    "no": 2,
+    "title": "(소비자경보 2016-02호) 금융감독원을 사칭하는 팝업창에 속지 마세요!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34855&menuNo=200204&pageIndex=20"
+  },
+  {
+    "year": 2016,
+    "no": 1,
+    "title": "(소비자경보 2016-01호) 개인정보 보안·관리에 각별히 주의하세요!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34854&menuNo=200204&pageIndex=20"
+  },
+  {
+    "year": 2015,
+    "no": 7,
+    "title": "(소비자경보 2015-07호) 금융감독원 사칭, 유령 팝업창 주의!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [
+      "사칭"
+    ],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34853&menuNo=200204&pageIndex=20"
+  },
+  {
+    "year": 2015,
+    "no": 6,
+    "title": "(소비자경보 2015-06호) 무료체험, 무료이용 빙자한 할부계약에 주의!",
+    "type": "기타",
+    "prevention_possibility": "중",
+    "verification_target": "미확보(개별 확인 대상 분석 미수행)",
+    "signals": [],
+    "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=34852&menuNo=200204&pageIndex=20"
+  }
+]

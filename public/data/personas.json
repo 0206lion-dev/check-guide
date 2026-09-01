@@ -1,0 +1,46 @@
+[
+  {
+    "persona_type": "투자사기",
+    "scenario": "유튜브 보다가 몽골 은행 채권을 연 11% 준다고 해서 알아보고 있는데, 국내 증권사가 아니라 처음 보는 곳에서 판매한다고 합니다. 괜찮을까요?",
+    "signals_present": [
+      "사칭",
+      "고수익",
+      "SNS"
+    ],
+    "verification_target": "해외채권 판매업체의 국내 인가 여부",
+    "original_source": {
+      "alert_no": "2025-10호",
+      "title": "(소비자경보 2025-10호) 몽골 'G은행'을 사칭한 고수익 해외채권 투자사기에 대한 소비자경보 발령",
+      "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=193417&menuNo=200204&pageIndex=5"
+    }
+  },
+  {
+    "persona_type": "대출사기",
+    "scenario": "대출 상담해준다는 사람이 신용 확인 겸 먼저 30만원을 빌려서 일주일 뒤에 40만원을 갚으라고 합니다. 이렇게 몇 번 해야 진짜 큰 대출이 나온다는데, 이거 정상인가요?",
+    "signals_present": [
+      "사칭"
+    ],
+    "verification_target": "대출업체의 등록 여부",
+    "original_source": {
+      "alert_no": "2024-14호",
+      "title": "(소비자경보 2024-14호) 수백~수천만원의 대출을 미끼로 한 초고금리 급전대출 사기에 속지 마세요!",
+      "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=135056&menuNo=200204&pageIndex=8"
+    }
+  },
+  {
+    "persona_type": "가상자산",
+    "scenario": "예전에 쓰던 코인 거래소가 곧 문을 닫는다며, 지금 안 옮기면 보유 코인이 소각된다는 문자를 받았습니다. 문자에 있는 링크로 들어가서 확인해봐도 될까요?",
+    "signals_present": [
+      "사칭",
+      "SNS",
+      "미신고",
+      "가짜 거래소"
+    ],
+    "verification_target": "가상자산사업자 신고 여부",
+    "original_source": {
+      "alert_no": "2024-28호",
+      "title": "(소비자경보 2024-28호) 영업종료로 인한 가상자산 소각? 가상자산사업자 사칭 사기를 의심하세요!",
+      "url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=137879&menuNo=200204&pageIndex=7"
+    }
+  }
+]

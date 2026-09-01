@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>확인길잡이</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="header">
+      <h1>확인길잡이</h1>
+      <p class="tagline">받은 제안, 무엇을 어디서 확인해야 할지 알려드립니다.</p>
+    </header>
+
+    <section class="input-section">
+      <label for="scenario-input" class="input-label">받은 메시지나 상황을 그대로 붙여넣으세요</label>
+      <textarea id="scenario-input" rows="5" placeholder="예: 유튜브 보다가 몽골 은행 채권을 연 11% 준다고 해서 알아보고 있는데..."></textarea>
+
+      <div class="persona-row" id="persona-row">
+        <span class="persona-label">예시로 보기:</span>
+        <!-- 버튼은 app.js에서 personas.json 로드 후 채움 -->
+      </div>
+
+      <button id="analyze-btn" class="analyze-btn">확인하기</button>
+    </section>
+
+    <section id="result-section" class="result-section" hidden>
+
+      <div class="result-block" id="block-summary">
+        <div id="summary-output" class="summary-output"></div>
+      </div>
+
+      <div class="result-block" id="block-signals">
+        <h2>감지된 위험 신호</h2>
+        <div id="signals-output" class="signals-output"></div>
+      </div>
+
+      <div class="result-block" id="block-type">
+        <h2>유형 판정</h2>
+        <div id="type-output" class="type-output"></div>
+      </div>
+
+      <div class="result-block" id="block-checks">
+        <h2>확인해야 할 것</h2>
+        <div id="checks-output" class="checks-output"></div>
+      </div>
+
+      <div class="result-block" id="block-similar">
+        <h2>유사 경보 사례</h2>
+        <div id="similar-output" class="similar-output"></div>
+      </div>
+
+    </section>
+
+    <section id="empty-state" class="empty-state" hidden>
+      <p>입력한 내용에서 등록된 위험 신호를 찾지 못했습니다. 그래도 의심되는 업체나 상품이 있다면, 아래에서 소개하는 파인(FINE) 조회를 직접 이용해보세요.</p>
+      <a class="fallback-link" href="https://fine.fss.or.kr/fine/main/main.do?menuNo=900000" target="_blank" rel="noopener">파인(FINE) 바로가기</a>
+    </section>
+
+    <footer class="footer">
+      <p>이 서비스는 조회를 대신하지 않습니다. 금융감독원 파인(FINE)이 이미 제공하는 조회 기능으로 안내만 합니다.</p>
+      <p>근거: 금융감독원 소비자경보 198건 분석 (2015~2026)</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

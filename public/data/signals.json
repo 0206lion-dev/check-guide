@@ -1,0 +1,206 @@
+[
+  {
+    "signal": "고수익",
+    "total_count_55": 23,
+    "by_type": {
+      "투자사기": 20,
+      "대출사기": 2,
+      "가상자산": 1
+    },
+    "dominant_type": "투자사기"
+  },
+  {
+    "signal": "사칭",
+    "total_count_55": 22,
+    "by_type": {
+      "투자사기": 15,
+      "대출사기": 1,
+      "가상자산": 6
+    },
+    "dominant_type": "투자사기"
+  },
+  {
+    "signal": "SNS",
+    "total_count_55": 16,
+    "by_type": {
+      "투자사기": 11,
+      "대출사기": 3,
+      "가상자산": 2
+    },
+    "dominant_type": "투자사기"
+  },
+  {
+    "signal": "리딩방",
+    "total_count_55": 8,
+    "by_type": {
+      "투자사기": 7,
+      "가상자산": 1
+    },
+    "dominant_type": "투자사기"
+  },
+  {
+    "signal": "유사수신",
+    "total_count_55": 6,
+    "by_type": {
+      "투자사기": 5,
+      "가상자산": 1
+    },
+    "dominant_type": "투자사기"
+  },
+  {
+    "signal": "원금보장",
+    "total_count_55": 4,
+    "by_type": {
+      "투자사기": 4
+    },
+    "dominant_type": "투자사기"
+  },
+  {
+    "signal": "단기간",
+    "total_count_55": 4,
+    "by_type": {
+      "투자사기": 4
+    },
+    "dominant_type": "투자사기"
+  },
+  {
+    "signal": "미신고",
+    "total_count_55": 4,
+    "by_type": {
+      "투자사기": 2,
+      "가상자산": 2
+    },
+    "dominant_type": "투자사기"
+  },
+  {
+    "signal": "가짜 거래소",
+    "total_count_55": 4,
+    "by_type": {
+      "투자사기": 2,
+      "가상자산": 2
+    },
+    "dominant_type": "투자사기"
+  },
+  {
+    "signal": "카카오톡",
+    "total_count_55": 3,
+    "by_type": {
+      "투자사기": 3
+    },
+    "dominant_type": "투자사기"
+  },
+  {
+    "signal": "1:1 채팅",
+    "total_count_55": 3,
+    "by_type": {
+      "투자사기": 3
+    },
+    "dominant_type": "투자사기"
+  },
+  {
+    "signal": "다단계",
+    "total_count_55": 2,
+    "by_type": {
+      "투자사기": 1,
+      "가상자산": 1
+    },
+    "dominant_type": "투자사기"
+  },
+  {
+    "signal": "수익보장",
+    "total_count_55": 2,
+    "by_type": {
+      "투자사기": 1,
+      "대출사기": 1
+    },
+    "dominant_type": "투자사기"
+  },
+  {
+    "signal": "원금 보장",
+    "total_count_55": 1,
+    "by_type": {
+      "투자사기": 1
+    },
+    "dominant_type": "투자사기"
+  },
+  {
+    "signal": "비대면",
+    "total_count_55": 1,
+    "by_type": {
+      "대출사기": 1
+    },
+    "dominant_type": "대출사기"
+  },
+  {
+    "signal": "손실보전",
+    "total_count_55": 1,
+    "by_type": {
+      "투자사기": 1
+    },
+    "dominant_type": "투자사기"
+  },
+  {
+    "signal": "묻지마",
+    "total_count_55": 1,
+    "by_type": {
+      "투자사기": 1
+    },
+    "dominant_type": "투자사기"
+  },
+  {
+    "signal": "무인가",
+    "total_count_55": 1,
+    "by_type": {
+      "투자사기": 1
+    },
+    "dominant_type": "투자사기"
+  },
+  {
+    "signal": "위임장",
+    "total_count_55": 1,
+    "by_type": {
+      "대출사기": 1
+    },
+    "dominant_type": "대출사기"
+  },
+  {
+    "signal": "명의도용",
+    "total_count_55": 1,
+    "by_type": {
+      "대출사기": 1
+    },
+    "dominant_type": "대출사기"
+  },
+  {
+    "signal": "무료 재테크",
+    "total_count_55": 1,
+    "by_type": {
+      "투자사기": 1
+    },
+    "dominant_type": "투자사기"
+  },
+  {
+    "signal": "상장 임박",
+    "total_count_55": 1,
+    "by_type": {
+      "투자사기": 1
+    },
+    "dominant_type": "투자사기"
+  },
+  {
+    "signal": "복권",
+    "total_count_55": 1,
+    "by_type": {
+      "대출사기": 1
+    },
+    "dominant_type": "대출사기"
+  },
+  {
+    "signal": "당첨",
+    "total_count_55": 1,
+    "by_type": {
+      "대출사기": 1
+    },
+    "dominant_type": "대출사기"
+  }
+]
