@@ -317,6 +317,13 @@ textarea:focus {
   color: var(--text-muted);
 }
 
+.revisit-note {
+  margin-top: 8px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
 .sub-steps {
   margin: 6px 0 0;
   padding-left: 18px;
@@ -390,6 +397,56 @@ textarea:focus {
   color: var(--text-muted);
   font-size: 0.82rem;
   margin: 0 0 6px;
+}
+
+.postincident-block {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.postincident-lead {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+}
+
+.postincident-branch {
+  margin-bottom: 12px;
+}
+
+.postincident-branch .label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  margin-bottom: 3px;
+  font-weight: 600;
+}
+
+.postincident-branch ul {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 0.92rem;
+}
+
+.postincident-branch li {
+  margin-bottom: 4px;
+}
+
+.dept-contact {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.dept-contact a {
+  color: var(--link);
+}
+
+.postincident-caveat {
+  margin: 10px 0 0;
+  font-size: 0.78rem;
+  color: var(--text-muted);
 }
 
 .empty-state {

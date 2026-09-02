@@ -101,6 +101,7 @@ const state = {
   personaAiCache: [],
   llmRequestId: 0,
   llmSessionCache: new Map(),
+  postIncident: {},
 };
 
 // LLM 호출 없이 규칙 결과만 보여줄 최소 입력 길이. 너무 짧은 입력은 요약할 내용이
@@ -108,13 +109,14 @@ const state = {
 const MIN_TEXT_LENGTH_FOR_LLM = 20;
 
 async function loadData() {
-  const [alerts, typeProfiles, signals, personas, synonyms, personaAiCache] = await Promise.all([
+  const [alerts, typeProfiles, signals, personas, synonyms, personaAiCache, postIncident] = await Promise.all([
     fetch("data/alerts.json").then((r) => r.json()),
     fetch("data/type_profiles.json").then((r) => r.json()),
     fetch("data/signals.json").then((r) => r.json()),
     fetch("data/personas.json").then((r) => r.json()),
     fetch("data/signal_synonyms.json").then((r) => r.json()),
     fetch("data/persona_ai_cache.json").then((r) => r.json()),
+    fetch("data/post_incident.json").then((r) => r.json()),
   ]);
   state.alerts = alerts;
   state.typeProfiles = typeProfiles;
@@ -122,6 +124,7 @@ async function loadData() {
   state.personas = personas;
   state.synonyms = synonyms;
   state.personaAiCache = personaAiCache;
+  state.postIncident = postIncident;
 }
 
 // 페르소나 3종은 입력이 고정돼 있으므로 미리 생성해둔 LLM 응답을 재사용한다.
@@ -484,6 +487,12 @@ function buildChecksCardsHtml(type) {
       }
 
       const judgment = buildJudgment(c);
+      // 확인 대상 목록을 대신 조회해주는 게 아니라 "직접 확인하는 절차"를 안내하는
+      // 서비스라는 원칙(가치 정의: 다음엔 혼자 할 수 있어야 한다)을 화면에도 남긴다.
+      // 신고 전용 카드는 반복 학습할 "경로"가 아니라 1회성 신고 행위이므로 제외한다.
+      const revisitNote = isReportOnly(c)
+        ? ""
+        : `<div class="revisit-note">다음에도 같은 경로로 직접 확인하실 수 있습니다.</div>`;
 
       return `
         <div class="check-card">
@@ -502,6 +511,7 @@ function buildChecksCardsHtml(type) {
                 <p><strong>결과 있음</strong> → ${escapeHtml(judgment["있음"])}</p>
               </div></li>
             </ol>
+            ${revisitNote}
           </div>
         </div>`;
     })
@@ -528,12 +538,18 @@ function renderChecks(type) {
 function renderSimilarAlertsForType(type, matchedSignalNames) {
   const alertsOfType = state.alerts.filter((a) => a.type === type);
 
+  // 신호 1개만 겹치는 경우는 "유사 사례"로 부르기엔 근거가 약하다 — "고수익"·"사칭" 같은
+  // 신호는 그 유형 전체에서 워낙 흔해(55건 중 20건 이상) 1개만 겹쳐서는 이 경보와 특별히
+  // 비슷하다고 말하기 어렵다. 2개 이상 겹칠 때만 "유사 사례"로 제시하고, 그렇지 않으면
+  // 최근 경보로 대체해 과장된 유사성을 주장하지 않는다.
+  const MIN_OVERLAP_FOR_SIMILARITY = 2;
+
   const withOverlap = alertsOfType
     .map((a) => {
       const overlapSignals = (a.signals || []).filter((s) => matchedSignalNames.includes(s));
       return { alert: a, overlapSignals };
     })
-    .filter((c) => c.overlapSignals.length > 0)
+    .filter((c) => c.overlapSignals.length >= MIN_OVERLAP_FOR_SIMILARITY)
     .sort((a, b) => b.overlapSignals.length - a.overlapSignals.length)
     .slice(0, 3);
 
@@ -541,7 +557,7 @@ function renderSimilarAlertsForType(type, matchedSignalNames) {
     return { items: withOverlap, mode: "overlap" };
   }
 
-  // 겹치는 신호가 0건이면 "사례 없음"을 띄우지 않고, 같은 유형의 최근 경보로 대체한다.
+  // 겹치는 신호가 기준 미만이면 "사례 없음"을 띄우지 않고, 같은 유형의 최근 경보로 대체한다.
   const recent = [...alertsOfType]
     .sort((a, b) => (b.year - a.year) || (b.no - a.no))
     .slice(0, 3)
@@ -589,6 +605,57 @@ function renderSimilarAlerts(type, matchedSignalNames) {
   if (!el.innerHTML) {
     el.innerHTML = '<p class="no-similar">이 유형의 경보 사례가 없습니다.</p>';
   }
+}
+
+// 조회 경로·판단 기준 안내에서 끝나면 흐름이 완결되지 않는다(가치 정의: 스스로 판단할
+// 수 있는 상태에 도달하는 것). 확인 결과가 "미등록·미신고"로 나왔을 때 무엇을 해야
+// 하는지까지 안내해 흐름을 마무리한다. 신고 기한은 경보 원문 어디에도 명시돼 있지
+// 않으므로(judgment_criteria.csv 조사 결과) 기한을 지어내지 않고 "지체 없이"라는
+// 경보 원문의 표현을 그대로 쓴다. 담당부서 직통번호도 데이터에 있는 것만 쓴다 — 없으면
+// 만들지 않고 표시하지 않는다.
+function renderPostIncident(type) {
+  const el = document.getElementById("postincident-output");
+  el.innerHTML = "";
+
+  const typesToShow = type ? [type] : TYPE_ORDER;
+
+  typesToShow.forEach((t) => {
+    const info = state.postIncident[t];
+
+    if (!type) {
+      const header = document.createElement("h3");
+      header.className = "type-group-title";
+      header.textContent = t;
+      el.appendChild(header);
+    }
+
+    const deptNote = info
+      ? `<div class="dept-contact">${escapeHtml(t)} 관련 최근 경보(${escapeHtml(info.source_alert)})에 안내된 금융감독원 담당부서: <a href="${info.source_url}" target="_blank" rel="noopener">${escapeHtml(info.dept_contact)}</a> (경보마다 담당부서가 다를 수 있습니다)</div>`
+      : "";
+
+    const block = document.createElement("div");
+    block.className = "postincident-block";
+    block.innerHTML = `
+      <p class="postincident-lead">확인 결과가 <strong>"미등록·미신고"</strong>라면</p>
+      <div class="postincident-branch">
+        <div class="label">이미 송금했다면</div>
+        <ul>
+          <li>거래 은행에 지급정지 신청</li>
+          <li>경찰 112</li>
+          <li>금융감독원 1332</li>
+        </ul>
+      </div>
+      <div class="postincident-branch">
+        <div class="label">아직 송금 전이라면</div>
+        <ul>
+          <li>거래 중단</li>
+          <li>금융감독원 불법금융신고센터 신고</li>
+        </ul>
+      </div>
+      ${deptNote}
+      <p class="postincident-caveat">※ 경보 원문에 명시적 신고 기한은 없으며 "지체 없이 신고"를 권고하고 있습니다.</p>`;
+    el.appendChild(block);
+  });
 }
 
 function escapeHtml(str) {
@@ -683,6 +750,7 @@ function runAnalysis() {
   // 패턴 신호는 alerts.json에 존재할 수 없으므로 겹침 계산 전에 데이터 기반 신호만 남긴다.
   const dataBackedSignalNames = matchedSignals.filter((s) => s.dataBacked).map((s) => s.signal);
   renderSimilarAlerts(typeResult.type, dataBackedSignalNames);
+  renderPostIncident(typeResult.type);
 
   // 규칙 기반 결과는 이미 화면에 떴다. LLM은 여기서부터 별도로, 실패해도 위 결과에 영향 없다.
   const cached = findPersonaAiCache(text);

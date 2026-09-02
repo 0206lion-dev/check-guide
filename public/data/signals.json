@@ -49,9 +49,9 @@
   },
   {
     "signal": "원금보장",
-    "total_count_55": 4,
+    "total_count_55": 5,
     "by_type": {
-      "투자사기": 4
+      "투자사기": 5
     },
     "dominant_type": "투자사기"
   },
@@ -112,14 +112,6 @@
     "by_type": {
       "투자사기": 1,
       "대출사기": 1
-    },
-    "dominant_type": "투자사기"
-  },
-  {
-    "signal": "원금 보장",
-    "total_count_55": 1,
-    "by_type": {
-      "투자사기": 1
     },
     "dominant_type": "투자사기"
   },

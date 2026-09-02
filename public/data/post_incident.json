@@ -1,0 +1,17 @@
+{
+  "투자사기": {
+    "dept_contact": "02-3145-8285",
+    "source_alert": "2026-3호",
+    "source_url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=209394&menuNo=200204&pageIndex=3"
+  },
+  "대출사기": {
+    "dept_contact": "02-3145-8726",
+    "source_alert": "2025-11호",
+    "source_url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=193563&menuNo=200204&pageIndex=5"
+  },
+  "가상자산": {
+    "dept_contact": "02-3145-8250",
+    "source_alert": "2026-10호",
+    "source_url": "https://www.fss.or.kr/fss/bbs/B0000175/view.do?nttId=216588&menuNo=200204&pageIndex=2"
+  }
+}
