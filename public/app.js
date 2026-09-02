@@ -228,21 +228,55 @@ function keywordFallbackScore(text) {
   return { scores, matched };
 }
 
+// 동점이면 배열 순서(TYPE_ORDER)로 임의로 승자를 정하지 않고 미확정(null)으로 처리한다.
+// 실제로 55건 커버리지 측정에서 이 배열 순서 편향으로 오분류된 사례가 나온 것을 보고 고쳤다
+// (2025-6호: 키워드 점수 투자사기·가상자산 동률 1점 — 배열에서 먼저 나온 투자사기로 잘못
+// 확정됐었다). 미확정이면 renderType/renderChecks가 이미 3개 유형 후보를 모두 보여준다.
 function pickMax(scores) {
   let best = null;
   let bestScore = 0;
+  let tie = false;
   TYPE_ORDER.forEach((t) => {
     if (scores[t] > bestScore) {
       bestScore = scores[t];
       best = t;
+      tie = false;
+    } else if (scores[t] === bestScore && bestScore > 0) {
+      tie = true;
     }
   });
-  return best;
+  return tie ? null : best;
 }
 
-// 1차: 신호(원문/동의어/숫자패턴) 매칭 합산 → 있으면 그걸로 판정
-// 2차: 신호가 0건이면 일반 키워드 폴백 → 그것도 0건이면 판정불가
+// 조치 F — 배타적 키워드. "사칭" 같은 교차 유형 신호가 만드는 오분류(기획서 4장 (5))를
+// 짧은 텍스트에서도 바로잡기 위해, 신호 가중합보다 우선하는 키워드를 별도로 뒀다.
+// 아무 키워드나 넣지 않았다 — 55건 전수에서 각 후보 키워드가 유형별로 몇 건에 등장하는지
+// 직접 세어, 표본이 5건 이상이면서 한 유형에 80% 이상(그리고 사실상 100%로 깨끗하게)
+// 집중된 것만 넣었다. "가상자산"(60%)·"거래소"(75%, 그나마도 투자사기 쪽에 더 쏠림)·
+// "코인"(71.4%)은 이 기준을 통과하지 못해 제외했다 — 가상자산과 투자사기가 어휘를
+// 상당히 공유한다는 뜻이며, 이 사실 자체가 가상자산 정확도 문제의 원인 중 하나다.
+const EXCLUSIVE_KEYWORDS = {
+  대출사기: ["대출"],
+  투자사기: ["주식"],
+};
+
+// 1차: 배타적 키워드가 정확히 한 유형에서만 걸리면 그걸로 즉시 확정한다(신호보다 우선).
+// 2차: 아니면 신호(원문/동의어/숫자패턴) 매칭 합산 → 있으면 그걸로 판정
+// 3차: 신호가 0건이면 일반 키워드 폴백 → 그것도 0건이면 판정불가
 function determineType(matchedSignals, text) {
+  const exclusiveHits = Object.keys(EXCLUSIVE_KEYWORDS).filter((type) =>
+    EXCLUSIVE_KEYWORDS[type].some((kw) => text.includes(kw))
+  );
+  if (exclusiveHits.length === 1) {
+    const type = exclusiveHits[0];
+    return {
+      type,
+      totals: { 투자사기: 0, 대출사기: 0, 가상자산: 0 },
+      basis: "exclusive-keyword",
+      keywordsForChosenType: EXCLUSIVE_KEYWORDS[type].filter((kw) => text.includes(kw)),
+    };
+  }
+
   const signalTotals = { 투자사기: 0, 대출사기: 0, 가상자산: 0 };
   matchedSignals.forEach((sig) => {
     if (sig.dataBacked) {
@@ -464,7 +498,7 @@ function renderType(typeResult) {
   const el = document.getElementById("type-output");
   el.innerHTML = "";
   if (!typeResult.type) {
-    el.innerHTML = '<p class="type-desc">신호도 일반 키워드도 감지되지 않아 유형을 판정할 수 없습니다. 아래에서 3개 유형의 확인 항목을 모두 보여드립니다 — 직접 상황에 맞는 것을 골라보세요.</p>';
+    el.innerHTML = '<p class="type-desc">신호나 키워드가 없거나 여러 유형에 걸쳐 동률이라 유형을 확정할 수 없습니다. 아래에서 3개 유형의 확인 항목을 모두 보여드립니다 — 직접 상황에 맞는 것을 골라보세요.</p>';
     return;
   }
   const profile = state.typeProfiles[typeResult.type];
@@ -474,7 +508,9 @@ function renderType(typeResult) {
   const desc = document.createElement("div");
   desc.className = "type-desc";
   let basisNote = "";
-  if (typeResult.basis === "keyword") {
+  if (typeResult.basis === "exclusive-keyword") {
+    basisNote = ` (배타적 키워드 기반 확정: ${(typeResult.keywordsForChosenType || []).map((k) => `"${k}"`).join(", ")})`;
+  } else if (typeResult.basis === "keyword") {
     basisNote = ` (일반 키워드 기반 추정: ${(typeResult.matchedKeywords || []).map((k) => `"${k}"`).join(", ")})`;
   } else if (typeResult.basis === "signal+keyword-correction") {
     basisNote = ` (감지된 신호는 여러 유형에 걸쳐 있어, 본문 키워드 ${(typeResult.matchedKeywords || []).map((k) => `"${k}"`).join(", ")} 기준으로 보정했습니다)`;
