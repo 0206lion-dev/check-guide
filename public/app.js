@@ -9,6 +9,30 @@ const KEYWORD_FALLBACK = {
   가상자산: ["가상자산", "거래소", "코인", "지갑", "출금"],
 };
 
+// 조치 E — 이 서비스가 다루는 3개 유형(투자사기/대출사기/가상자산)의 확인 대상은
+// 전부 금융위·금감원의 인가·등록 체계를 전제로 한다. 순수 부동산 매매·분양 권유는
+// 그런 인가 체계 자체가 없는 영역이다 — 경보 198건 중 "부동산"이 들어간 사례는
+// 1건(2024-21호)뿐이고, 그마저도 부동산 자체가 아니라 그것을 파는 "펀드"가
+// 유사수신·온라인투자연계금융업인지를 묻는 사례였다(즉 금융상품으로 포장된 경우만
+// 데이터에 있음). 데이터에 없는 부동산 사기 유형을 새로 만들어 억지로 커버하는 대신,
+// 순수 부동산 거래로 보이면 이 서비스의 범위 밖이라는 사실을 안내한다. 펀드·신탁 등
+// 금융상품 포장이 함께 언급되면(2024-21호 사례처럼) 범위 밖으로 보지 않고 평소대로
+// 유형 판정을 진행한다.
+const OUT_OF_SCOPE_RULES = [
+  {
+    name: "부동산",
+    match: (text) =>
+      /부동산|기획부동산|분양권|토지\s*투자/.test(text) &&
+      !/펀드|신탁|조합원|리츠|REIT|온라인투자연계|P2P|유사수신|증권사/i.test(text),
+    message:
+      "이 서비스는 금융회사·금융상품 확인에 특화되어 있습니다. 입력하신 내용은 부동산 매매·분양 관련으로 보이며, 파인(FINE)이 조회하는 제도권 금융회사·대부업체 등록 대상에 해당하지 않아 이 서비스로는 확인해 드리기 어렵습니다. 사기가 의심되면 경찰(112)에 문의하세요.",
+  },
+];
+
+function detectOutOfScope(text) {
+  return OUT_OF_SCOPE_RULES.find((r) => r.match(text)) || null;
+}
+
 // 조치 2 — 숫자 패턴 (수익률 표현은 signals.json의 '고수익'과 동일하게 취급)
 const PCT_PATTERN = /(?:연|월|일|주)?\s*\d{1,3}(?:\.\d+)?\s*%/;
 const MONEY_REMIT_PATTERN =
@@ -725,14 +749,32 @@ async function fetchLlmAnalysis(text, typeResult, matchedSignals) {
   }
 }
 
+function renderOutOfScope(rule) {
+  document.getElementById("scope-notice-text").textContent = rule.message;
+  document.getElementById("scope-notice").hidden = false;
+}
+
 function runAnalysis() {
   const text = document.getElementById("scenario-input").value.trim();
   const resultSection = document.getElementById("result-section");
   const emptyState = document.getElementById("empty-state");
+  const scopeNotice = document.getElementById("scope-notice");
+
+  scopeNotice.hidden = true;
 
   if (!text) {
     resultSection.hidden = true;
     emptyState.hidden = true;
+    return;
+  }
+
+  // 조치 E: 이 서비스의 판정 대상이 아닌 사안(예: 순수 부동산 거래)은 유형 판정도
+  // 확인 카드도 만들지 않고, 범위 밖이라는 사실만 정직하게 안내한다.
+  const outOfScope = detectOutOfScope(text);
+  if (outOfScope) {
+    resultSection.hidden = true;
+    emptyState.hidden = true;
+    renderOutOfScope(outOfScope);
     return;
   }
 

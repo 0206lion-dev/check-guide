@@ -457,6 +457,20 @@ textarea:focus {
   text-align: center;
 }
 
+.scope-notice {
+  margin-top: 32px;
+  padding: 20px;
+  background: var(--accent-2-bg);
+  border: 1px solid #e6c98a;
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.scope-notice p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
 .fallback-link {
   display: inline-block;
   margin-top: 10px;
