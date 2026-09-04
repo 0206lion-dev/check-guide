@@ -42,6 +42,36 @@ function detectOutOfScope(text, matchedSignals) {
   return OUT_OF_SCOPE_RULES.find((r) => r.match(text)) || null;
 }
 
+const NORMAL_TYPE = "\uC815\uC0C1";
+
+const INBOUND_APPROACH_PATTERN =
+  /\uC5F0\uB77D(?:\uC774|\uC744)?\s*(?:\uC654|\uBC1B)|\uC804\uD654(?:\uAC00|\uB97C)?\s*(?:\uC654|\uBC1B)|\uBB38\uC790(?:\uAC00|\uB97C)?\s*(?:\uC654|\uBC1B)|\uBA54\uC2DC\uC9C0(?:\uAC00|\uB97C)?\s*(?:\uC654|\uBC1B)|\uBA54\uC77C(?:\uC774|\uC744)?\s*(?:\uC654|\uBC1B)|\uCE74\uD1A1|\uD154\uB808\uADF8\uB7A8|\uC624\uD508\uCC44\uD305|DM|\uB514\uC5E0|\uC0C1\uB2F4\uC6D0|\uB2F4\uB2F9\uC790|\uC9C1\uC6D0|\uC124\uACC4\uC0AC|\uD310\uB9E4\uC790|\uC911\uAC1C\uC778|\uB51C\uB7EC|\uC5C5\uCCB4|\uC0AC\uB78C\uC774|\uB204\uAC00|\uB204\uAD70\uAC00|\uAD8C\uC720\uBC1B|\uCD94\uCC9C\uD574\uC92C|\uBB3C\uC5B4\uBD24|\uC54C\uB824\uC900|\uBCF4\uB0B4\uC92C|\uBCF4\uB0B4\uB2EC|\uC900\uB2E4\uACE0\s*\uC804\uD654|\uB77C\uACE0\s*\uC804\uD654|\uB77C\uBA74\uC11C\s*\uC804\uD654/;
+
+const EXTERNAL_DEMAND_PATTERN =
+  /\uBCF4\uB0B4\s*\uB2EC\uB77C|\uBCF4\uB0B4\uB2EC\uB77C|\uB0B4\uB77C\uACE0|\uB2EC\uB77C\uACE0|\uC694\uAD6C|\uC7AC\uCD09|\uAC1C\uC778\s*(?:\uBA85\uC758\s*)?\uACC4\uC88C|\uACC4\uC88C\uB85C\s*(?:\uBA3C\uC800\s*)?(?:\uBCF4\uB0B4|\uC785\uAE08|\uC774\uCCB4)|(?:\uC2E0\uBD84\uC99D|\uAC1C\uC778\uC815\uBCF4|\uCE74\uB4DC\uBC88\uD638|\uBE44\uBC00\uBC88\uD638|\uC778\uC99D\uBC88\uD638|\uC0DD\uB144\uC6D4\uC77C)[^.!?\n]{0,20}(?:\uBCF4\uB0B4|\uB2EC\uB77C|\uC694\uAD6C|\uD655\uC778)|\uBCF4\uC99D\uAE08\s*(?:\uC804\uC561|\uBA3C\uC800|\uBD80\uD130)|\uACC4\uC57D\uAE08\s*(?:\uBA3C\uC800|\uBD80\uD130)/;
+
+const NORMAL_FINANCIAL_CONTEXT_PATTERN =
+  /\uC740\uD589|\uC99D\uAD8C\uC0AC|\uCE74\uB4DC|\uBCF4\uD5D8|\uB300\uCD9C|\uC608\uAE08|\uC801\uAE08|\uACC4\uC88C|\uD380\uB4DC|ETF|ELS|CMA|IRP|ISA|\uC5F0\uAE08|\uCCAD\uC57D|\uCC44\uAD8C|\uC8FC\uC2DD|\uD658\uC804|\uC1A1\uAE08|\uC774\uCCB4\uD55C\uB3C4|\uAE08\uB9AC|\uC218\uC218\uB8CC|\uC138\uAE08|\uC0C1\uD658|\uC608\uAE08\uC790\s*\uBCF4\uD638|\uAE08\uC735|\uD1F4\uC9C1\uC5F0\uAE08|\uC2E4\uC190|\uB9AC\uBCFC\uBE59|\uB300\uD658\uB300\uCD9C|\uC2E0\uC6A9\uC810\uC218|\uC778\uC99D\uC11C|OTP|\uD648\uD0DD\uC2A4|\uAD6D\uC138\uCCAD|\uD1B5\uC2E0\uC0AC\s*\uC694\uAE08|\uBC95\uC778\uCE74\uB4DC|\uACE0\uC6A9\uC9C0\uC6D0\uAE08|\uB9E4\uCD9C\uCC44\uAD8C|\uD329\uD1A0\uB9C1|\uD1B5\uC7A5|\uC774\uC790|\uBCF5\uB9AC|\uD574\uC678\uACB0\uC81C/;
+
+const NORMAL_INQUIRY_PATTERN =
+  /\uAD81\uAE08|\uC54C\uACE0\s*\uC2F6|\uD655\uC778(?:\uD574)?\s*\uBCF4\uACE0\s*\uC2F6|\uD655\uC778(?:\uD558|\uD560)\s*(?:\uBC29\uBC95|\uC218)|\uC5B4\uB5BB\uAC8C|\uC5B4\uB514\uC11C|\uC5B4\uB514\uB85C|\uBC29\uBC95|\uC808\uCC28|\uAC00\uB2A5|\uB9DE\uB098\uC694|\uB418\uB098\uC694|\uD558\uB098\uC694|\uC778\uAC00\uC694|\uBE44\uAD50|\uACC4\uC0B0|\uC870\uAC74|\uC11C\uB958|\uC218\uC218\uB8CC|\uCC28\uC774|\uC720\uB9AC|\uD574\uC9C0|\uC5F0\uC7A5|\uC2E0\uCCAD|\uC870\uD68C|\uBC1C\uAE09|\uC124\uC815|\uBCC0\uACBD|\uC774\uC804|\uC62E\uAE30|\uC804\uD658|\uD658\uB9E4|\uB9CC\uAE30|\uD55C\uB3C4|\uD61C\uD0DD|\uBCF4\uD638|\uCC98\uB9AC\s*\uAE30\uAC04|\uD480\s*\uC218|\uC7A0\uAC00/;
+
+// Normal inquiries are self-directed finance procedure questions with no risk signal,
+// no inbound approach, and no request to transfer money or provide sensitive data.
+function detectNormalInquiry(text, matchedSignals) {
+  if ((matchedSignals || []).length > 0) return null;
+  if (INBOUND_APPROACH_PATTERN.test(text)) return null;
+  if (EXTERNAL_DEMAND_PATTERN.test(text)) return null;
+  if (!NORMAL_FINANCIAL_CONTEXT_PATTERN.test(text)) return null;
+  if (!NORMAL_INQUIRY_PATTERN.test(text)) return null;
+  return {
+    type: NORMAL_TYPE,
+    totals: { "\uD22C\uC790\uC0AC\uAE30": 0, "\uB300\uCD9C\uC0AC\uAE30": 0, "\uAC00\uC0C1\uC790\uC0B0": 0, "\uC815\uC0C1": 1 },
+    basis: "normal-inquiry",
+    keywordsForChosenType: [],
+  };
+}
+
 // 조치 2 — 숫자 패턴 (수익률 표현은 signals.json의 '고수익'과 동일하게 취급)
 const PCT_PATTERN = /(?:연|월|일|주)?\s*\d{1,3}(?:\.\d+)?\s*%/;
 const MONEY_REMIT_PATTERN =
@@ -510,6 +540,17 @@ function renderType(typeResult) {
     el.innerHTML = '<p class="type-desc">신호나 키워드가 없거나 여러 유형에 걸쳐 동률이라 유형을 확정할 수 없습니다. 아래에서 3개 유형의 확인 항목을 모두 보여드립니다 — 직접 상황에 맞는 것을 골라보세요.</p>';
     return;
   }
+  if (typeResult.type === NORMAL_TYPE) {
+    const name = document.createElement("div");
+    name.className = "type-name";
+    name.textContent = NORMAL_TYPE;
+    const desc = document.createElement("div");
+    desc.className = "type-desc";
+    desc.textContent = "\uAC10\uC9C0\uB41C \uC704\uD5D8 \uC2E0\uD638\uB098 \uC678\uBD80 \uC811\uADFC \uC815\uD669\uC774 \uC5C6\uC5B4 \uC77C\uBC18 \uAE08\uC735 \uC808\uCC28 \uBB38\uC758\uB85C \uBCF4\uC785\uB2C8\uB2E4.";
+    el.appendChild(name);
+    el.appendChild(desc);
+    return;
+  }
   const profile = state.typeProfiles[typeResult.type];
   const name = document.createElement("div");
   name.className = "type-name";
@@ -589,6 +630,10 @@ function buildChecksCardsHtml(type) {
 
 function renderChecks(type) {
   const el = document.getElementById("checks-output");
+  if (type === NORMAL_TYPE) {
+    el.innerHTML = '<p class="no-signals">\uAC10\uC9C0\uB41C \uC704\uD5D8 \uC2E0\uD638\uAC00 \uC5C6\uC5B4 \uBCC4\uB3C4 \uC0AC\uAE30 \uD655\uC778 \uCE74\uB4DC\uAC00 \uD544\uC694\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.</p>';
+    return;
+  }
   if (type) {
     el.innerHTML = buildChecksCardsHtml(type);
     return;
@@ -685,6 +730,7 @@ function renderSimilarAlerts(type, matchedSignalNames) {
 function renderPostIncident(type) {
   const el = document.getElementById("postincident-output");
   el.innerHTML = "";
+  if (type === NORMAL_TYPE) return;
 
   const typesToShow = type ? [type] : TYPE_ORDER;
 
@@ -826,7 +872,8 @@ function runAnalysis() {
     return;
   }
 
-  const typeResult = determineType(matchedSignals, text);
+  const normalResult = detectNormalInquiry(text, matchedSignals);
+  const typeResult = normalResult || determineType(matchedSignals, text);
 
   // 조치 4: 신호·키워드가 전부 0건이라도 빈 화면 대신 3개 유형 전체를 보여준다.
   emptyState.hidden = true;
