@@ -29,7 +29,16 @@ const OUT_OF_SCOPE_RULES = [
   },
 ];
 
-function detectOutOfScope(text) {
+// "부동산" 같은 비금융 키워드가 있어도, 리딩방·사칭·SNS 등 실제 경보 198건에서
+// 집계한 데이터 기반 위험 신호가 함께 있으면 그 소재를 미끼로 한 투자·대출·가상자산
+// 사기일 가능성이 크다("아파트 부동산 투자하면 110% 이익이라고 텔레그램 리딩방에서
+// 나왔어요" 같은 경우 — 부동산은 미끼일 뿐 핵심 위험은 리딩방 투자사기다). 소재 키워드
+// 유무로 판정이 갈리면 안 되므로, 데이터 기반 신호가 하나라도 감지되면 범위 밖 판정을
+// 보류하고 정상 유형 판정 흐름으로 넘긴다. 비금융 키워드만 있고 위험 신호가 전혀 없을
+// 때만 범위 밖으로 처리한다.
+function detectOutOfScope(text, matchedSignals) {
+  const hasDataBackedSignal = (matchedSignals || []).some((s) => s.dataBacked);
+  if (hasDataBackedSignal) return null;
   return OUT_OF_SCOPE_RULES.find((r) => r.match(text)) || null;
 }
 
@@ -805,8 +814,11 @@ function runAnalysis() {
   }
 
   // 조치 E: 이 서비스의 판정 대상이 아닌 사안(예: 순수 부동산 거래)은 유형 판정도
-  // 확인 카드도 만들지 않고, 범위 밖이라는 사실만 정직하게 안내한다.
-  const outOfScope = detectOutOfScope(text);
+  // 확인 카드도 만들지 않고, 범위 밖이라는 사실만 정직하게 안내한다. 단, 비금융
+  // 키워드가 있어도 데이터 기반 위험 신호가 함께 감지되면(소재가 미끼일 뿐인 경우)
+  // 범위 밖 판정을 보류해야 하므로, 신호 탐지를 먼저 실행한 뒤 그 결과를 넘긴다.
+  const matchedSignals = detectSignals(text);
+  const outOfScope = detectOutOfScope(text, matchedSignals);
   if (outOfScope) {
     resultSection.hidden = true;
     emptyState.hidden = true;
@@ -814,7 +826,6 @@ function runAnalysis() {
     return;
   }
 
-  const matchedSignals = detectSignals(text);
   const typeResult = determineType(matchedSignals, text);
 
   // 조치 4: 신호·키워드가 전부 0건이라도 빈 화면 대신 3개 유형 전체를 보여준다.
