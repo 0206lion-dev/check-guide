@@ -16,6 +16,7 @@
     <section class="input-section">
       <label for="scenario-input" class="input-label">받은 메시지나 상황을 그대로 붙여넣으세요</label>
       <textarea id="scenario-input" rows="5" placeholder="예: 유튜브 보다가 몽골 은행 채권을 연 11% 준다고 해서 알아보고 있는데..."></textarea>
+      <p class="input-hint">이런 내용이 있으면 더 정확합니다: <strong>누가 연락했는지</strong> · <strong>무엇을 하라고 했는지</strong> · <strong>금액이나 수익률 언급</strong></p>
 
       <div class="persona-section">
         <p class="persona-hint">이런 상황이라면 눌러보세요</p>
@@ -30,6 +31,10 @@
     </section>
 
     <section id="result-section" class="result-section" hidden>
+
+      <div class="result-block lowinfo-block" id="block-lowinfo">
+        <div id="lowinfo-output" class="lowinfo-output"></div>
+      </div>
 
       <div class="result-block headline-block" id="block-headline">
         <div id="headline-output" class="headline-output"></div>

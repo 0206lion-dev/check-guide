@@ -178,6 +178,46 @@ const state = {
 // 마땅치 않고, 호출 자체를 아끼는 편이 할당량 관리에 낫다.
 const MIN_TEXT_LENGTH_FOR_LLM = 20;
 
+// 조치 G — "정보 부족" 경고 판별 기준(안내 전용, 판정 로직과는 무관).
+// MIN_TEXT_LENGTH_FOR_LLM(20자)은 "AI 요약을 부를 만큼 내용이 있는가"만 본다 —
+// 규칙 엔진이 실제로 근거 있게 유형을 판정했는지와는 다른 질문이다. 규칙 엔진의
+// 판정 근거는 사실 "누가 접근했는지 / 무엇을 요구했는지 / 금액·수익률 언급이
+// 있는지" 3가지 정보 요소다(체크리스트 문구와 동일). 이 3요소 중 2개 미만이면
+// 텍스트가 20자를 넘어도(예: "카카오톡으로 주식 관련 메시지왔어") 실질 정보가
+// 없는 것이므로, 길이 하나만으로는 못 거른다. 반대로 정보 요소가 갖춰졌어도
+// 문장 자체가 극단적으로 짧으면(30자 미만) 우연한 매칭일 수 있어 함께 본다.
+// 그래서 "30자 미만" 또는 "정보 요소 2개 미만" 둘 중 하나라도 걸리면 경고를 띄운다.
+//
+// "무엇을 요구했는지" 요소는 이미 runAnalysis에서 계산해 둔 matchedSignals(신호 탐지
+// 결과)를 그대로 재사용한다. 새 키워드 사전을 따로 만들지 않는 이유: signals.json
+// 23종 + 패턴 신호 5종이 이미 "링크 유도", "가상자산 소각 빙자"처럼 투자·송금
+// 요구가 아닌 다른 형태의 요구 행위까지 폭넓게 커버하고 있어, 하드코딩한 키워드
+// 목록보다 훨씬 오탐이 적다(예: "소각된다는 문자를 받았다" 같은 문장은 "투자/송금"
+// 키워드가 없어도 패턴 신호로 이미 잡힌다).
+const LOW_INFO_MIN_LENGTH = 30;
+const LOW_INFO_MIN_ELEMENTS = 2;
+
+const CONTACT_SOURCE_HINT_PATTERN =
+  /전화|문자|카톡|카카오톡|메시지|메일|디엠|DM|텔레그램|밴드|유튜브|인스타|페이스북|블로그|지인|친구|직원|상담원|대표|업체|중개인|딜러|판매자|광고|권유받|연락(?:이|을)?\s*(?:왔|받)/;
+const AMOUNT_OR_RATE_HINT_PATTERN =
+  /\d[\d,]*\s*(?:만\s*원|천\s*원|원)|\d{1,3}(?:\.\d+)?\s*(?:%|퍼센트|배)/;
+
+// 화면 경고 여부만 판단하는 렌더링 보조 함수 — determineType 등 판정 결과에는
+// 전혀 관여하지 않는다. matchedSignals는 runAnalysis에서 이미 계산된 값을 그대로
+// 넘겨받아 재사용할 뿐, 여기서 새로 신호를 탐지하지 않는다.
+function countInfoElements(text, matchedSignals) {
+  let count = 0;
+  if (CONTACT_SOURCE_HINT_PATTERN.test(text)) count += 1;
+  if ((matchedSignals || []).length > 0) count += 1;
+  if (AMOUNT_OR_RATE_HINT_PATTERN.test(text)) count += 1;
+  return count;
+}
+
+function isLowInfoInput(text, matchedSignals) {
+  if (text.length < LOW_INFO_MIN_LENGTH) return true;
+  return countInfoElements(text, matchedSignals) < LOW_INFO_MIN_ELEMENTS;
+}
+
 async function loadData() {
   const [alerts, typeProfiles, signals, personas, synonyms, personaAiCache, postIncident] = await Promise.all([
     fetch("data/alerts.json").then((r) => r.json()),
@@ -541,6 +581,27 @@ function renderSignals(matchedSignals, typeResult) {
 }
 
 const CIRCLED_DIGITS = ["①", "②", "③", "④", "⑤"];
+
+// 핵심 요약 카드보다도 위에 뜨는 "정보 부족" 경고. isLowInfoInput은 안내 전용
+// 판별이라 판정 결과(typeResult)를 바꾸지 않는다 — 정상 유형(NORMAL_TYPE)은
+// 애초에 위험 신호가 없다는 안내이므로 이 경고 대상에서 제외한다.
+function renderLowInfoWarning(text, typeResult, matchedSignals) {
+  const el = document.getElementById("lowinfo-output");
+  el.innerHTML = "";
+  if (typeResult.type === NORMAL_TYPE) return;
+  if (!isLowInfoInput(text, matchedSignals)) return;
+
+  el.innerHTML = `<div class="lowinfo-card">
+    <p class="lowinfo-title">입력하신 내용이 짧아 판정의 정확도가 낮을 수 있습니다.</p>
+    <p class="lowinfo-desc">아래 정보를 추가하면 더 정확히 확인해 드립니다:</p>
+    <ul class="lowinfo-list">
+      <li>연락한 사람/업체가 누구인지</li>
+      <li>무엇을 하라고 했는지 (투자 권유, 대출 알선, 송금 요구 등)</li>
+      <li>구체적인 금액이나 수익률 언급이 있었는지</li>
+    </ul>
+    <p class="lowinfo-caveat">이 결과는 참고용입니다. 더 자세히 입력하면 더 정확해집니다.</p>
+  </div>`;
+}
 
 // 결과 화면 맨 위에 "지금 해야 할 일"을 3줄 이내로 고정 요약한다. 아래 신호/유형
 // 상세, 확인 카드는 그대로 두고, 이 카드는 이미 계산된 typeResult와 pickChecks
@@ -986,6 +1047,7 @@ function runAnalysis() {
   resultSection.hidden = false;
 
   clearSummary();
+  renderLowInfoWarning(text, typeResult, matchedSignals);
   renderHeadline(typeResult);
   renderSignals(matchedSignals, typeResult);
   renderType(typeResult);
