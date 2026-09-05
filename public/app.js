@@ -540,6 +540,50 @@ function renderSignals(matchedSignals, typeResult) {
   });
 }
 
+const CIRCLED_DIGITS = ["①", "②", "③", "④", "⑤"];
+
+// 결과 화면 맨 위에 "지금 해야 할 일"을 3줄 이내로 고정 요약한다. 아래 신호/유형
+// 상세, 확인 카드는 그대로 두고, 이 카드는 이미 계산된 typeResult와 pickChecks
+// 결과를 화면에 옮겨 적을 뿐 새로운 판정을 하지 않는다.
+function renderHeadline(typeResult) {
+  const el = document.getElementById("headline-output");
+  el.innerHTML = "";
+
+  if (typeResult.type === NORMAL_TYPE) {
+    el.innerHTML = `<div class="headline-card headline-normal">
+      <div class="headline-title">감지된 위험 신호가 없습니다</div>
+      <p class="headline-desc">일반 금융 절차 문의로 보여 별도 확인이 필요하지 않습니다.</p>
+    </div>`;
+    return;
+  }
+
+  if (!typeResult.type) {
+    el.innerHTML = `<div class="headline-card headline-unknown">
+      <div class="headline-title">유형을 확정할 수 없습니다</div>
+      <p class="headline-desc">아래에서 3개 유형(투자사기·대출사기·가상자산)의 확인 항목을 모두 보여드립니다. 해당하는 상황을 직접 골라 확인하세요.</p>
+    </div>`;
+    return;
+  }
+
+  const checks = pickChecks(typeResult.type);
+  if (checks.length === 0) {
+    el.innerHTML = `<div class="headline-card">
+      <div class="headline-title">${escapeHtml(typeResult.type)} 유형입니다</div>
+      <p class="headline-desc">이 유형에 대해 확인된 조회 경로가 없습니다. 아래 상세를 참고하세요.</p>
+    </div>`;
+    return;
+  }
+
+  const steps = checks
+    .map((c, i) => `<li><span class="headline-step-num">${CIRCLED_DIGITS[i] || i + 1}</span> ${escapeHtml(c["확인대상"])}</li>`)
+    .join("");
+
+  el.innerHTML = `<div class="headline-card">
+    <div class="headline-title">${escapeHtml(typeResult.type)} 유형입니다. 아래 ${checks.length}가지를 확인하세요:</div>
+    <ol class="headline-steps">${steps}</ol>
+  </div>`;
+}
+
 function renderType(typeResult) {
   const el = document.getElementById("type-output");
   el.innerHTML = "";
@@ -577,11 +621,39 @@ function renderType(typeResult) {
   el.appendChild(desc);
 }
 
+// "왜" 텍스트를 접힌 상태에서 보여줄 한 줄 요약. buildReason의 문장을 그대로 두고
+// 표시 방식만 자르는 렌더링 전용 헬퍼다(문구 자체를 새로 만들지 않음).
+function toOneLineTeaser(text, maxLen) {
+  const limit = maxLen || 40;
+  const sentenceEnd = text.search(/[.?!]\s/);
+  if (sentenceEnd > 0 && sentenceEnd + 1 <= limit) return text.slice(0, sentenceEnd + 1);
+  return text.length > limit ? `${text.slice(0, limit)}…` : text;
+}
+
+const CHECKED_ITEMS_STORAGE_KEY = "checkedItems";
+
+function loadCheckedItems() {
+  try {
+    return JSON.parse(localStorage.getItem(CHECKED_ITEMS_STORAGE_KEY)) || {};
+  } catch (e) {
+    return {};
+  }
+}
+
+function saveCheckedItems(map) {
+  try {
+    localStorage.setItem(CHECKED_ITEMS_STORAGE_KEY, JSON.stringify(map));
+  } catch (e) {
+    // 저장 실패해도 화면 동작에는 영향 없음(새로고침 시 초기화될 뿐)
+  }
+}
+
 function buildChecksCardsHtml(type) {
   const checks = pickChecks(type);
   if (checks.length === 0) {
     return '<p class="no-signals">이 유형에 대해 확인된 조회 경로가 없습니다.</p>';
   }
+  const checkedItems = loadCheckedItems();
   return checks
     .map((c) => {
       const hasUrl = /^https?:\/\//.test(c.url);
@@ -589,7 +661,7 @@ function buildChecksCardsHtml(type) {
 
       let step1;
       if (hasUrl) {
-        step1 = `${escapeHtml(c["경로"])} — <a href="${c.url}" target="_blank" rel="noopener">바로가기</a>`;
+        step1 = `${escapeHtml(c["경로"])} <a class="go-link-btn" href="${c.url}" target="_blank" rel="noopener">바로가기 →</a>`;
       } else if (Array.isArray(c["탐색절차"]) && c["탐색절차"].length) {
         const subSteps = c["탐색절차"]
           .map((s) => `<li>${escapeHtml(s)}</li>`)
@@ -604,6 +676,8 @@ function buildChecksCardsHtml(type) {
       }
 
       const judgment = buildJudgment(c);
+      const reason = buildReason(type, c);
+      const reasonTeaser = toOneLineTeaser(reason);
       // 확인 대상 목록을 대신 조회해주는 게 아니라 "직접 확인하는 절차"를 안내하는
       // 서비스라는 원칙(가치 정의: 다음엔 혼자 할 수 있어야 한다)을 화면에도 남긴다.
       // 신고 전용 카드는 반복 학습할 "경로"가 아니라 1회성 신고 행위이므로 제외한다.
@@ -611,28 +685,51 @@ function buildChecksCardsHtml(type) {
         ? ""
         : `<div class="revisit-note">다음에도 같은 경로로 직접 확인하실 수 있습니다.</div>`;
 
+      const checkId = `${type}::${c["확인대상"]}`;
+      const isChecked = !!checkedItems[checkId];
+
       return `
-        <div class="check-card">
-          <h3>${escapeHtml(c["확인대상"])} ${titleBadge}</h3>
-          <div class="check-section">
-            <div class="label">왜 확인해야 하나</div>
-            <div class="why">${escapeHtml(buildReason(type, c))}</div>
+        <div class="check-card${isChecked ? " check-card-done" : ""}" data-check-id="${escapeHtml(checkId)}">
+          <div class="check-card-head">
+            <h3>${escapeHtml(c["확인대상"])} ${titleBadge}</h3>
+            <label class="check-done-toggle">
+              <input type="checkbox" class="check-done-input" ${isChecked ? "checked" : ""} />
+              확인함
+            </label>
           </div>
+          <details class="why-details">
+            <summary>${escapeHtml(reasonTeaser)}</summary>
+            <div class="why-full">${escapeHtml(reason)}</div>
+          </details>
           <div class="check-section">
             <div class="label">어떻게 확인하나</div>
             <ol class="check-steps">
-              <li>${step1}</li>
-              <li>입력값: ${escapeHtml(c["입력값"])}</li>
-              <li><div class="judgment-box">
+              <li><span class="step-num">1</span><div class="step-body">${step1}</div></li>
+              <li><span class="step-num">2</span><div class="step-body">입력값: ${escapeHtml(c["입력값"])}</div></li>
+              <li><span class="step-num">3</span><div class="step-body"><div class="judgment-box">
                 <p><strong>결과 없음</strong> → ${escapeHtml(judgment["없음"])}</p>
                 <p><strong>결과 있음</strong> → ${escapeHtml(judgment["있음"])}</p>
-              </div></li>
+              </div></div></li>
             </ol>
             ${revisitNote}
           </div>
         </div>`;
     })
     .join("");
+}
+
+function wireCheckDoneToggles(container) {
+  const checkedItems = loadCheckedItems();
+  container.querySelectorAll(".check-card").forEach((card) => {
+    const checkId = card.dataset.checkId;
+    const input = card.querySelector(".check-done-input");
+    if (!input) return;
+    input.addEventListener("change", () => {
+      checkedItems[checkId] = input.checked;
+      saveCheckedItems(checkedItems);
+      card.classList.toggle("check-card-done", input.checked);
+    });
+  });
 }
 
 function renderChecks(type) {
@@ -643,12 +740,14 @@ function renderChecks(type) {
   }
   if (type) {
     el.innerHTML = buildChecksCardsHtml(type);
+    wireCheckDoneToggles(el);
     return;
   }
   // 판정 불가: 3개 유형 전체를 보여준다
   el.innerHTML = TYPE_ORDER.map(
     (t) => `<h3 class="type-group-title">${escapeHtml(t)}</h3>${buildChecksCardsHtml(t)}`
   ).join("");
+  wireCheckDoneToggles(el);
 }
 
 // 조치 B — 유사 경보 사례
@@ -887,6 +986,7 @@ function runAnalysis() {
   resultSection.hidden = false;
 
   clearSummary();
+  renderHeadline(typeResult);
   renderSignals(matchedSignals, typeResult);
   renderType(typeResult);
   renderChecks(typeResult.type);
