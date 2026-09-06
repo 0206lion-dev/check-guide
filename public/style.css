@@ -19,6 +19,7 @@
 body {
   margin: 0;
   font-family: system-ui, -apple-system, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-size: 16px;
   background: var(--bg);
   color: var(--text);
   line-height: 1.55;
@@ -44,14 +45,14 @@ body {
 .tagline {
   margin: 0;
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .input-label {
   display: block;
   font-weight: 600;
   margin-bottom: 8px;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 textarea {
@@ -72,7 +73,7 @@ textarea:focus {
 
 .input-hint {
   margin: 6px 0 0;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
 }
 
@@ -91,7 +92,7 @@ textarea:focus {
 
 .persona-hint {
   margin: 0 0 10px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--text);
 }
@@ -107,9 +108,10 @@ textarea:focus {
   border: 1px solid var(--border);
   background: #fff;
   color: var(--text);
-  padding: 10px 18px;
+  padding: 12px 22px;
+  min-height: 44px;
   border-radius: 999px;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
 }
@@ -142,7 +144,7 @@ textarea:focus {
 
 .privacy-note {
   margin: 8px 0 0;
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
   text-align: center;
 }
@@ -180,19 +182,19 @@ textarea:focus {
   margin: 0 0 4px;
   font-weight: 700;
   color: #8a6a1f;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
 }
 
 .lowinfo-desc {
   margin: 0 0 6px;
-  font-size: 0.88rem;
+  font-size: 1rem;
   color: #6b5218;
 }
 
 .lowinfo-list {
   margin: 0 0 8px;
   padding-left: 20px;
-  font-size: 0.88rem;
+  font-size: 1rem;
   color: #6b5218;
 }
 
@@ -202,7 +204,7 @@ textarea:focus {
 
 .lowinfo-caveat {
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   color: #8a6a1f;
   font-style: italic;
 }
@@ -238,7 +240,7 @@ textarea:focus {
 
 .headline-desc {
   margin: 4px 0 0;
-  font-size: 0.92rem;
+  font-size: 1rem;
   color: var(--text-muted);
 }
 
@@ -260,48 +262,32 @@ textarea:focus {
   margin-right: 6px;
 }
 
-/* 개선 2 — 신호/유형 상세는 기본 접힘 상태로, 작게 유지 */
-.detail-block {
+.summary-output:empty {
+  display: none;
+}
+
+/* "숨김 없는 화면" 원칙 — 감지된 위험 신호/유형 판정은 더 이상 접혀 있지 않고
+   처음부터 전부 펼쳐서 보여준다(클릭 없이도 전체 정보 확인 가능). */
+
+/* 규칙 기반이 미확정일 때 AI 참고 의견을 최상단에 보여주는 카드 */
+.ai-correction-output:empty {
+  display: none;
+}
+
+.ai-correction-block {
   margin-bottom: 18px;
 }
 
-.detail-block > summary {
-  cursor: pointer;
-  font-size: 0.92rem;
+.ai-correction-output .summary-text {
+  background: var(--accent-2-bg);
+  border: 1px solid #e6c98a;
+}
+
+.ai-correction-caveat {
+  margin: 8px 0 0;
+  font-size: 1rem;
   font-weight: 600;
-  color: var(--text-muted);
-  padding: 8px 0;
-  list-style: none;
-}
-
-.detail-block > summary::-webkit-details-marker {
-  display: none;
-}
-
-.detail-block > summary::before {
-  content: "▸";
-  display: inline-block;
-  margin-right: 6px;
-  transition: transform 0.15s;
-}
-
-.detail-block[open] > summary::before {
-  transform: rotate(90deg);
-}
-
-.detail-block > summary .detail-hint {
-  margin-left: 6px;
-  font-size: 0.78rem;
-  font-weight: 400;
-  color: var(--text-muted);
-}
-
-.detail-block > div {
-  margin-top: 10px;
-}
-
-.summary-output:empty {
-  display: none;
+  color: #8a6a1f;
 }
 
 .summary-loading {
@@ -314,7 +300,7 @@ textarea:focus {
   background: var(--bg-soft);
   border-radius: var(--radius);
   padding: 12px 14px;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .summary-correction {
@@ -323,7 +309,7 @@ textarea:focus {
   background: var(--accent-2-bg);
   border-left: 3px solid var(--accent-2);
   border-radius: 6px;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
 }
 
 .summary-correction strong {
@@ -371,7 +357,7 @@ textarea:focus {
 
 .secondary-block .similar-item,
 .secondary-block .postincident-block {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   border-color: var(--border);
 }
 
@@ -413,7 +399,7 @@ textarea:focus {
 
 .no-signals {
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .judgment-basis {
@@ -441,7 +427,7 @@ textarea:focus {
 
 .type-desc {
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .type-group-title {
@@ -483,8 +469,10 @@ textarea:focus {
 .check-done-toggle {
   display: flex;
   align-items: center;
-  gap: 5px;
-  font-size: 0.8rem;
+  gap: 8px;
+  min-height: 44px;
+  padding: 4px 6px;
+  font-size: 0.95rem;
   color: var(--text-muted);
   white-space: nowrap;
   cursor: pointer;
@@ -492,34 +480,15 @@ textarea:focus {
 }
 
 .check-done-input {
+  width: 22px;
+  height: 22px;
   cursor: pointer;
 }
 
-/* 개선 2 — "왜": 기본은 한 줄 요약, 클릭하면 펼쳐짐 */
-.why-details {
-  margin-bottom: 12px;
-}
-
-.why-details summary {
-  cursor: pointer;
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  list-style: none;
-}
-
-.why-details summary::-webkit-details-marker {
-  display: none;
-}
-
-.why-details summary::before {
-  content: "왜 확인해야 하나 · ";
-  font-weight: 600;
-  color: var(--text);
-}
-
+/* "숨김 없는 화면" — "왜 확인해야 하나"는 클릭 없이 항상 전체 문장이 보인다 */
 .why-full {
-  margin-top: 6px;
-  font-size: 0.9rem;
+  margin-top: 4px;
+  font-size: 1rem;
   padding: 8px 10px;
   background: var(--bg-soft);
   border-radius: 6px;
@@ -543,7 +512,7 @@ textarea:focus {
   list-style: none;
   margin: 0;
   padding: 0;
-  font-size: 0.92rem;
+  font-size: 1rem;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -583,14 +552,16 @@ textarea:focus {
 }
 
 .go-link-btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   margin-top: 6px;
-  padding: 6px 14px;
+  padding: 10px 22px;
   background: var(--link);
   color: #fff !important;
   border-radius: 999px;
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 1rem;
   text-decoration: none !important;
 }
 
@@ -621,7 +592,7 @@ textarea:focus {
 .sub-steps {
   margin: 6px 0 0;
   padding-left: 18px;
-  font-size: 0.88rem;
+  font-size: 0.95rem;
 }
 
 .sub-steps li {
@@ -633,7 +604,7 @@ textarea:focus {
   border-left: 3px solid var(--accent-2);
   padding: 10px 12px;
   border-radius: 6px;
-  font-size: 0.88rem;
+  font-size: 1rem;
   margin-top: 8px;
 }
 
@@ -654,7 +625,7 @@ textarea:focus {
 .similar-item {
   border-bottom: 1px solid var(--border);
   padding: 10px 0;
-  font-size: 0.92rem;
+  font-size: 1rem;
 }
 
 .similar-item:last-child {
@@ -678,7 +649,7 @@ textarea:focus {
 
 .no-similar {
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .similar-overlap {
@@ -701,7 +672,7 @@ textarea:focus {
 
 .postincident-lead {
   margin: 0 0 10px;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .postincident-branch {
@@ -720,7 +691,7 @@ textarea:focus {
 .postincident-branch ul {
   margin: 0;
   padding-left: 20px;
-  font-size: 0.92rem;
+  font-size: 1rem;
 }
 
 .postincident-branch li {
@@ -729,7 +700,7 @@ textarea:focus {
 
 .dept-contact {
   margin-top: 4px;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
 }
 
@@ -762,14 +733,18 @@ textarea:focus {
 
 .scope-notice p {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .fallback-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 8px;
   margin-top: 10px;
   color: var(--link);
   font-weight: 600;
+  font-size: 1rem;
 }
 
 .footer {

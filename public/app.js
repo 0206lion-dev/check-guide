@@ -811,15 +811,6 @@ function renderType(typeResult) {
   el.appendChild(desc);
 }
 
-// "왜" 텍스트를 접힌 상태에서 보여줄 한 줄 요약. buildReason의 문장을 그대로 두고
-// 표시 방식만 자르는 렌더링 전용 헬퍼다(문구 자체를 새로 만들지 않음).
-function toOneLineTeaser(text, maxLen) {
-  const limit = maxLen || 40;
-  const sentenceEnd = text.search(/[.?!]\s/);
-  if (sentenceEnd > 0 && sentenceEnd + 1 <= limit) return text.slice(0, sentenceEnd + 1);
-  return text.length > limit ? `${text.slice(0, limit)}…` : text;
-}
-
 const CHECKED_ITEMS_STORAGE_KEY = "checkedItems";
 
 function loadCheckedItems() {
@@ -867,7 +858,6 @@ function buildChecksCardsHtml(type) {
 
       const judgment = buildJudgment(c);
       const reason = buildReason(type, c);
-      const reasonTeaser = toOneLineTeaser(reason);
       // 확인 대상 목록을 대신 조회해주는 게 아니라 "직접 확인하는 절차"를 안내하는
       // 서비스라는 원칙(가치 정의: 다음엔 혼자 할 수 있어야 한다)을 화면에도 남긴다.
       // 신고 전용 카드는 반복 학습할 "경로"가 아니라 1회성 신고 행위이므로 제외한다.
@@ -884,13 +874,13 @@ function buildChecksCardsHtml(type) {
             <h3>${escapeHtml(c["확인대상"])} ${titleBadge}</h3>
             <label class="check-done-toggle">
               <input type="checkbox" class="check-done-input" ${isChecked ? "checked" : ""} />
-              확인함
+              이 항목을 확인했습니다
             </label>
           </div>
-          <details class="why-details">
-            <summary>${escapeHtml(reasonTeaser)}</summary>
+          <div class="check-section">
+            <div class="label">왜 확인해야 하나</div>
             <div class="why-full">${escapeHtml(reason)}</div>
-          </details>
+          </div>
           <div class="check-section">
             <div class="label">어떻게 확인하나</div>
             <ol class="check-steps">
@@ -1077,22 +1067,37 @@ function escapeHtml(str) {
 
 // --- 2단계: LLM 보정 레이어 (실패해도 1단계 결과는 그대로 유지) ---
 
-function renderSummaryLoading() {
-  const el = document.getElementById("summary-output");
-  el.innerHTML = '<p class="summary-loading">AI가 상황을 정리하고 있습니다...</p>';
+// 규칙 기반이 유형을 확정하지 못한 경우(currentType === null)에는 AI 응답을
+// "숨김 없는 화면" 원칙에 따라 최상단(짧은 입력 경고 바로 아래) 카드로 보여준다 —
+// 아래로 스크롤해야만 보이는 위치가 아니라, 참고용 판단임을 제일 먼저 알려야
+// 하기 때문이다. 유형이 이미 확정된 경우는 기존 위치(핵심 요약 카드 아래)를 그대로 쓴다.
+function getSummaryTargetIds(currentType) {
+  return currentType === null
+    ? { active: "ai-correction-output", other: "summary-output" }
+    : { active: "summary-output", other: "ai-correction-output" };
+}
+
+function renderSummaryLoading(currentType) {
+  const { active, other } = getSummaryTargetIds(currentType);
+  document.getElementById(other).innerHTML = "";
+  document.getElementById(active).innerHTML = '<p class="summary-loading">AI가 상황을 정리하고 있습니다...</p>';
 }
 
 function clearSummary() {
   document.getElementById("summary-output").innerHTML = "";
+  document.getElementById("ai-correction-output").innerHTML = "";
 }
 
-function renderQuotaNotice() {
-  const el = document.getElementById("summary-output");
-  el.innerHTML = '<p class="summary-quota-notice">AI 요약은 일시적으로 제공되지 않습니다</p>';
+function renderQuotaNotice(currentType) {
+  const { active, other } = getSummaryTargetIds(currentType);
+  document.getElementById(other).innerHTML = "";
+  document.getElementById(active).innerHTML = '<p class="summary-quota-notice">AI 요약은 일시적으로 제공되지 않습니다</p>';
 }
 
 function renderSummary(llmResult, currentType, fromCache) {
-  const el = document.getElementById("summary-output");
+  const { active, other } = getSummaryTargetIds(currentType);
+  document.getElementById(other).innerHTML = "";
+  const el = document.getElementById(active);
   el.innerHTML = "";
 
   if (fromCache) {
@@ -1112,6 +1117,15 @@ function renderSummary(llmResult, currentType, fromCache) {
     note.className = "summary-correction";
     note.innerHTML = `<strong>AI가 본문 해석으로 유형을 보정했습니다.</strong><br>${escapeHtml(llmResult.correctedType)} — ${escapeHtml(llmResult.reason || "")}`;
     el.appendChild(note);
+  }
+
+  // currentType이 null(규칙 기반 미확정)일 때만 상단 카드에 표시되므로, 이 문구도
+  // 그 경우에만 덧붙인다 — 유형이 이미 확정된 아래쪽 요약에는 필요 없는 안내다.
+  if (currentType === null) {
+    const caveat = document.createElement("p");
+    caveat.className = "ai-correction-caveat";
+    caveat.textContent = "이 판단은 참고용이며, 아래 3개 유형의 확인 항목도 함께 확인하세요.";
+    el.appendChild(caveat);
   }
 }
 
@@ -1206,7 +1220,7 @@ function runAnalysis() {
     if (sessionCached.ok) {
       renderSummary(sessionCached, typeResult.type, false);
     } else if (sessionCached.quotaExceeded) {
-      renderQuotaNotice();
+      renderQuotaNotice(typeResult.type);
     } else {
       clearSummary();
     }
@@ -1215,7 +1229,7 @@ function runAnalysis() {
 
   // 응답 시간이 편차가 커서(초 단위로 변동) 대기 중 사용자가 "확인하기"를 다시 누르면 이전
   // 요청의 응답이 늦게 도착해 새 결과를 덮어쓸 수 있다 — 요청 ID로 최신 요청만 반영한다.
-  renderSummaryLoading();
+  renderSummaryLoading(typeResult.type);
   const requestId = ++state.llmRequestId;
   fetchLlmAnalysis(text, typeResult, matchedSignals).then((llmResult) => {
     state.llmSessionCache.set(text, llmResult);
@@ -1223,7 +1237,7 @@ function runAnalysis() {
     if (llmResult.ok) {
       renderSummary(llmResult, typeResult.type, false);
     } else if (llmResult.quotaExceeded) {
-      renderQuotaNotice();
+      renderQuotaNotice(typeResult.type);
     } else {
       clearSummary();
     }
