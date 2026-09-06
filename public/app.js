@@ -3,9 +3,16 @@
 const TYPE_ORDER = ["투자사기", "대출사기", "가상자산"];
 
 // 조치 3 — 신호 어휘가 전혀 없을 때의 키워드 폴백 (보도자료 문체가 아닌 일반 문장 대응)
+// "성공보수"·"신청비"·"출연금"·"R&D"는 tests/cross_model_cases_v3.csv(435건)에서
+// 등장 건수를 직접 세어 추가했다 — 성공보수 3건, 신청비 1건, 출연금 1건, R&D 2건
+// 모두 대출사기에서만 등장하고 투자사기·가상자산에는 전혀 나타나지 않는다(교차 확인
+// 완료). "지원금"·"대행"은 같은 확인 과정에서 범위밖_비금융·정상에도 흔히 등장해
+// (지원금 범위밖3·정상1·대출0, 대행 범위밖6·대출3) 제외했다 — 겹치는 단어를 잘못
+// 추가하면 반대쪽이 깨진다는 교훈(EXCLUSIVE_KEYWORDS 도입 시 이미 한 번 확인됨)을
+// 그대로 적용한 것이다.
 const KEYWORD_FALLBACK = {
   투자사기: ["투자", "채권", "주식", "종목", "코인 수익", "펀드"],
-  대출사기: ["대출", "한도", "신용", "급전", "상환"],
+  대출사기: ["대출", "한도", "신용", "급전", "상환", "성공보수", "신청비", "출연금", "R&D"],
   가상자산: ["가상자산", "거래소", "코인", "지갑", "출금"],
 };
 
@@ -373,8 +380,15 @@ function pickMax(scores) {
 // 집중된 것만 넣었다. "가상자산"(60%)·"거래소"(75%, 그나마도 투자사기 쪽에 더 쏠림)·
 // "코인"(71.4%)은 이 기준을 통과하지 못해 제외했다 — 가상자산과 투자사기가 어휘를
 // 상당히 공유한다는 뜻이며, 이 사실 자체가 가상자산 정확도 문제의 원인 중 하나다.
+//
+// "정책자금"은 tests/cross_model_cases_v3.csv(435건)에서 같은 방식으로 확인했다 —
+// 9건 등장 중 8건이 대출사기, 1건은 이 서비스 범위 밖인 스미싱(투자사기·가상자산에는
+// 0건)이라 within-scope 기준 사실상 100% 집중이며 표본도 5건 이상이다. 이 키워드가
+// 없으면 "소상공인 정책자금을 대행해준다면서 수수료 10%를 달라는데"처럼 "대출"이라는
+// 단어 자체가 없는 정책자금 대행 사기가 신호 0건 → 우연히 매칭된 "고수익"(수수료 %를
+// 투자수익률로 오인, by_type 투자사기 20/23) 쪽으로 잘못 확정되는 문제가 있었다.
 const EXCLUSIVE_KEYWORDS = {
-  대출사기: ["대출"],
+  대출사기: ["대출", "정책자금"],
   투자사기: ["주식"],
 };
 
@@ -673,14 +687,32 @@ function describeCoreRisk(typeResult, matchedSignals) {
   const action = CORE_RISK_ACTION_BY_TYPE[typeResult.type];
   if (!action) return null;
 
-  const dataBackedNames = (matchedSignals || []).filter((s) => s.dataBacked).map((s) => s.signal);
-  const patternNames = (matchedSignals || []).filter((s) => !s.dataBacked).map((s) => s.signal);
+  // 최종 판정된 유형과 실제로 관련된 근거만 고른다. matchedSignals에는 최종 유형과
+  // 무관한 신호(예: 배타적 키워드로 대출사기가 확정됐어도 "고수익"처럼 투자사기 쪽에
+  // 쏠린 신호가 함께 잡혀 있을 수 있음)가 섞여 있을 수 있어, by_type/leanType이
+  // 최종 유형을 가리키는 것만 후보로 삼는다. 키워드 기반 확정(basis가 exclusive-
+  // keyword/keyword)일 때는 그 키워드 자체가 가장 직접적인 근거이므로 우선한다.
   const keywordNames = typeResult.keywordsForChosenType || [];
+  const relevantDataBacked = (matchedSignals || [])
+    .filter((s) => s.dataBacked && s.by_type && s.by_type[typeResult.type] > 0)
+    .map((s) => s.signal);
+  const relevantPattern = (matchedSignals || [])
+    .filter((s) => !s.dataBacked && s.leanType === typeResult.type)
+    .map((s) => s.signal);
 
   let basisLabel = null;
-  if (dataBackedNames.length) basisLabel = `"${dataBackedNames[0]}" 신호`;
-  else if (patternNames.length) basisLabel = `"${patternNames[0]}" 패턴`;
-  else if (keywordNames.length) basisLabel = `"${keywordNames[0]}" 키워드`;
+  if (
+    (typeResult.basis === "exclusive-keyword" || typeResult.basis === "keyword" || typeResult.basis === "signal+keyword-correction") &&
+    keywordNames.length
+  ) {
+    basisLabel = `"${keywordNames[0]}" 키워드`;
+  } else if (relevantDataBacked.length) {
+    basisLabel = `"${relevantDataBacked[0]}" 신호`;
+  } else if (relevantPattern.length) {
+    basisLabel = `"${relevantPattern[0]}" 패턴`;
+  } else if (keywordNames.length) {
+    basisLabel = `"${keywordNames[0]}" 키워드`;
+  }
 
   if (!basisLabel) return null; // 근거 없는 문장은 만들지 않는다
   return `${basisLabel}${subjectParticle(basisLabel)} 감지되어 ${action} 상황으로 보입니다.`;
