@@ -736,6 +736,81 @@ textarea:focus {
   font-size: 1rem;
 }
 
+/* 납치·인질 협박형 보이스피싱 긴급 안내 — 판정 카드보다 훨씬 강한 경고색으로,
+   지금 당장 취해야 할 행동을 스크롤 없이 바로 보이게 한다 */
+.voice-phishing-notice {
+  margin-top: 32px;
+  padding: 20px;
+  background: var(--accent-bg);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+}
+
+.voice-phishing-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.voice-phishing-lead {
+  margin: 0 0 14px;
+  font-size: 1rem;
+}
+
+.voice-phishing-steps {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.voice-phishing-steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.voice-phishing-steps a {
+  color: var(--accent);
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+.voice-phishing-similar {
+  border-top: 1px solid #f2c6c1;
+  padding-top: 10px;
+}
+
+.voice-phishing-similar .label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.voice-phishing-similar ul {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 0.95rem;
+}
+
+.voice-phishing-similar a {
+  color: var(--link);
+}
+
+.voice-phishing-alert-meta {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
 .fallback-link {
   display: inline-flex;
   align-items: center;

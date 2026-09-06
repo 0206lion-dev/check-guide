@@ -49,6 +49,40 @@ function detectOutOfScope(text, matchedSignals) {
   return OUT_OF_SCOPE_RULES.find((r) => r.match(text)) || null;
 }
 
+// \uC870\uCE58 I \u2014 \uB0A9\uCE58\u00B7\uC778\uC9C8 \uD611\uBC15\uD615 \uBCF4\uC774\uC2A4\uD53C\uC2F1 \uAE34\uAE09 \uBD84\uAE30. \uC774 \uC11C\uBE44\uC2A4\uB294 \uD22C\uC790/\uB300\uCD9C/\uAC00\uC0C1\uC790\uC0B0
+// 3\uC885\uC758 "\uBB34\uC5C7\uC744 \uD655\uC778\uD574\uC57C \uD558\uB294\uAC00"\uB97C \uB2E4\uB8E8\uB3C4\uB85D \uC124\uACC4\uB410\uB2E4(TYPE_ORDER). \uADF8\uB7F0\uB370 "\uC544\uB4E4\uC774
+// \uB0A9\uCE58\uB410\uB2E4, \uC2E0\uACE0\uD558\uC9C0 \uB9D0\uACE0 \uD604\uAE08\uC744 \uC900\uBE44\uD558\uB77C" \uAC19\uC740 \uBB38\uC7A5\uC774 \uB4E4\uC5B4\uC624\uBA74 \uC2E0\uD638\uAC00 \uC804\uD600 \uC548
+// \uC7A1\uD600 \uD310\uC815\uBD88\uAC00\uB85C \uB5A8\uC5B4\uC9C0\uACE0, \uD654\uBA74\uC740 "\uC81C\uB3C4\uAD8C \uAE08\uC735\uD68C\uC0AC \uC5EC\uBD80"\u00B7"\uAC00\uC0C1\uC790\uC0B0\uC0AC\uC5C5\uC790 \uC2E0\uACE0
+// \uC5EC\uBD80" \uAC19\uC740 3\uC885 \uCCB4\uD06C\uCE74\uB4DC\uB97C \uBCF4\uC5EC\uC900\uB2E4 \u2014 \uC9C0\uAE08 \uB2F9\uC7A5 \uC704\uD5D8\uD560 \uC218 \uC788\uB294 \uC0C1\uD669\uC5D0 \uBB34\uC758\uBBF8\uD55C
+// \uC548\uB0B4\uB2E4. \uC2E4\uC81C \uACBD\uBCF4\uC5D0\uB3C4 \uC774 \uC720\uD615\uC774 \uC788\uB2E4(alerts.json: 2026-4\uD638 "\uC6B8\uBA74\uC11C '\uC5C4\uB9C8'
+// \uBD80\uB974\uB294 \uC544\uC774 \uBAA9\uC18C\uB9AC\u2026 \uC54C\uACE0\uBCF4\uB2C8 AI \uBCF4\uC774\uC2A4\uD53C\uC2F1", 2020-14\uD638 "\uC2E0\uBD84\uC99D\u00B7\uCE74\uB4DC\uBC88\uD638\uB97C
+// \uC694\uAD6C\uD558\uB294 \uC790\uB140 \uC0AC\uCE6D\uD615 \uBCF4\uC774\uC2A4\uD53C\uC2F1", 2022-13\uD638 "\uAC00\uC871\u00B7\uCE5C\uAD6C \uB4F1 \uC9C0\uC778\uC744 \uC0AC\uCE6D\uD55C
+// \uBA54\uC2E0\uC800\uD53C\uC2F1... \uBCF4\uC774\uC2A4\uD53C\uC2F1", \uC804\uBD80 type: "\uBCF4\uC774\uC2A4\uD53C\uC2F1" \u2014 \uC774 3\uC885 \uD310\uC815 \uB85C\uC9C1\uC758
+// \uB300\uC0C1\uC774 \uC544\uB2C8\uB2E4). \uC774 \uC720\uD615\uC740 3\uC885 \uD655\uC778 \uCE74\uB4DC\uB85C \uC548\uB0B4\uD560 \uC218 \uC5C6\uC73C\uBBC0\uB85C determineType\uC5D0
+// \uB4E4\uC5EC\uBCF4\uB0B4\uC9C0 \uC54A\uACE0, \uC989\uC2DC \uB04A\uACE0 \uC2E0\uACE0\uD558\uB77C\uB294 \uC548\uC804 \uC548\uB0B4\uB85C \uC870\uAE30 \uC885\uB8CC\uD55C\uB2E4. \uC624\uD0D0\uC744
+// \uC904\uC774\uAE30 \uC704\uD574 "\uB0A9\uCE58/\uC778\uC9C8/\uBAA9\uC18C\uB9AC" \uAC19\uC740 \uD611\uBC15 \uC815\uD669\uACFC "\uC2E0\uACE0\uD558\uC9C0 \uB9D0\uB77C" \uB610\uB294 \uAE09\uBC15\uD55C
+// \uD604\uAE08 \uC694\uAD6C\uAC00 \uD568\uAED8 \uC788\uC744 \uB54C\uB9CC \uBC1C\uB3D9\uD55C\uB2E4(\uB458 \uC911 \uD558\uB098\uB9CC\uC73C\uB85C\uB294 \uBC1C\uB3D9\uD558\uC9C0 \uC54A\uC74C).
+const KIDNAP_HOSTAGE_THREAT_PATTERN =
+  /\uB0A9\uCE58|\uC778\uC9C8|\uC0B4\uB824\uB2EC\uB77C|\uC0B4\uB824\uC918|\uBAA9\uC18C\uB9AC(?:\uAC00|\uB3C4)?\s*\uB4E4[\uB824\uB9AC]|\uB2E4\uCCE4\uB2E4|\uC704\uD5D8\uD558\uB2E4\uB294/;
+const URGENT_SILENCE_OR_CASH_DEMAND_PATTERN =
+  /\uC2E0\uACE0\uD558\uC9C0\s*\uB9D0|\uACBD\uCC30\uC5D0\s*(?:\uC5F0\uB77D|\uC2E0\uACE0)\uD558\uC9C0\s*\uB9D0|\uC544\uBB34\uD55C\uD14C\uB3C4\s*\uB9D0\uD558\uC9C0\s*\uB9D0|\uD604\uAE08[^.!?\n]{0,15}(?:\uC900\uBE44|\uAC00\uC9C0\uACE0|\uB4E4\uACE0)|(?:\uCC9C\uB9CC|\uBC31\uB9CC|\uC624\uBC31\uB9CC|\uC77C\uC5B5|1\uC5B5)\s*\uC6D0/;
+
+const KIDNAP_VOICE_PHISHING_ALERT_REFS = [
+  { year: 2026, no: 4 },
+  { year: 2020, no: 14 },
+];
+
+function detectUrgentVoicePhishing(text) {
+  if (!KIDNAP_HOSTAGE_THREAT_PATTERN.test(text)) return null;
+  if (!URGENT_SILENCE_OR_CASH_DEMAND_PATTERN.test(text)) return null;
+  // \uC778\uC6A9\uD560 \uACBD\uBCF4\uB294 alerts.json\uC5D0\uC11C \uADF8\uB54C\uADF8\uB54C \uCC3E\uB294\uB2E4 \u2014 url\u00B7\uC81C\uBAA9\uC744 \uC774 \uD30C\uC77C\uC5D0 \uB2E4\uC2DC
+  // \uC62E\uACA8 \uC801\uC9C0 \uC54A\uC544, alerts.json\uC774 \uAC31\uC2E0\uB3FC\uB3C4 \uC5B4\uAE0B\uB098\uC9C0 \uC54A\uB294\uB2E4.
+  const similarAlerts = KIDNAP_VOICE_PHISHING_ALERT_REFS.map((ref) =>
+    state.alerts.find((a) => a.year === ref.year && a.no === ref.no)
+  ).filter(Boolean);
+  return { name: "\uB0A9\uCE58\u00B7\uC778\uC9C8 \uD611\uBC15\uD615 \uBCF4\uC774\uC2A4\uD53C\uC2F1", similarAlerts };
+}
+
 const NORMAL_TYPE = "\uC815\uC0C1";
 
 const INBOUND_APPROACH_PATTERN =
@@ -1155,17 +1189,58 @@ function renderOutOfScope(rule) {
   document.getElementById("scope-notice").hidden = false;
 }
 
+function renderUrgentVoicePhishing(rule) {
+  const el = document.getElementById("voice-phishing-notice-content");
+  const alertsHtml = rule.similarAlerts
+    .map(
+      (a) =>
+        `<li><a href="${a.url}" target="_blank" rel="noopener">${escapeHtml(a.title)}</a> <span class="voice-phishing-alert-meta">(${a.year}-${a.no}호)</span></li>`
+    )
+    .join("");
+  el.innerHTML = `
+    <div class="voice-phishing-title">지금 상황은 보이스피싱(전화금융사기)으로 강하게 의심됩니다</div>
+    <p class="voice-phishing-lead">가족을 납치했다거나 다쳤다며 신고하지 말라고 하는 것은 실제 범죄 상황이 아니라 잘 알려진 보이스피싱 수법입니다. 이 서비스는 투자·대출·가상자산 확인에 특화돼 있어 이런 상황은 안내 대상이 아닙니다 — 아래 행동을 먼저 하세요.</p>
+    <ol class="voice-phishing-steps">
+      <li><span class="step-num">1</span><div class="step-body">지금 전화를 끊으세요.</div></li>
+      <li><span class="step-num">2</span><div class="step-body">가족(본인이 걱정하는 대상)에게 <strong>다른 방법</strong>(직접 전화, 문자, 다른 사람을 통해)으로 안전을 확인하세요.</div></li>
+      <li><span class="step-num">3</span><div class="step-body">현금을 준비하거나 송금하지 마세요.</div></li>
+      <li><span class="step-num">4</span><div class="step-body">경찰 <a href="tel:112">112</a> 또는 금융감독원 <a href="tel:1332">1332</a>에 바로 신고하세요.</div></li>
+    </ol>
+    ${
+      alertsHtml
+        ? `<div class="voice-phishing-similar">
+             <div class="label">유사 경보 사례</div>
+             <ul>${alertsHtml}</ul>
+           </div>`
+        : ""
+    }`;
+  document.getElementById("voice-phishing-notice").hidden = false;
+}
+
 function runAnalysis() {
   const text = document.getElementById("scenario-input").value.trim();
   const resultSection = document.getElementById("result-section");
   const emptyState = document.getElementById("empty-state");
   const scopeNotice = document.getElementById("scope-notice");
+  const voicePhishingNotice = document.getElementById("voice-phishing-notice");
 
   scopeNotice.hidden = true;
+  voicePhishingNotice.hidden = true;
 
   if (!text) {
     resultSection.hidden = true;
     emptyState.hidden = true;
+    return;
+  }
+
+  // 조치 I: 납치·인질 협박형 보이스피싱은 이 서비스가 판정하는 3종(투자/대출/
+  // 가상자산) 대상이 아니다. 3종 체크카드로 안내하면 무의미하거나 위험할 수 있는
+  // 위급 상황이므로, 신호 탐지·유형 판정에 들어가기도 전에 가장 먼저 확인한다.
+  const urgentVoicePhishing = detectUrgentVoicePhishing(text);
+  if (urgentVoicePhishing) {
+    resultSection.hidden = true;
+    emptyState.hidden = true;
+    renderUrgentVoicePhishing(urgentVoicePhishing);
     return;
   }
 
@@ -1256,6 +1331,7 @@ function restartCheck() {
   document.getElementById("result-section").hidden = true;
   document.getElementById("empty-state").hidden = true;
   document.getElementById("scope-notice").hidden = true;
+  document.getElementById("voice-phishing-notice").hidden = true;
   scenarioInput.scrollIntoView({ behavior: "smooth", block: "start" });
   scenarioInput.focus();
 }
