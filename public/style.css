@@ -747,6 +747,32 @@ textarea:focus {
   font-size: 1rem;
 }
 
+.restart-block {
+  margin-top: 8px;
+  text-align: center;
+}
+
+.restart-btn {
+  width: 100%;
+  min-height: 44px;
+  padding: 14px;
+  background: #fff;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.restart-btn:hover {
+  background: var(--bg-soft);
+}
+
+.restart-btn:active {
+  opacity: 0.85;
+}
+
 .footer {
   margin-top: 48px;
   padding-top: 16px;

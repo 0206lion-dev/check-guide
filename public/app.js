@@ -1244,10 +1244,23 @@ function runAnalysis() {
   });
 }
 
+// 새 페이지 이동 없이 같은 화면에서 입력창으로 돌아간다. 체크박스 로컬 저장값은
+// 그대로 두고(요구사항), 결과·범위밖·빈 상태 표시만 전부 숨겨 처음 화면으로 되돌린다.
+function restartCheck() {
+  const scenarioInput = document.getElementById("scenario-input");
+  scenarioInput.value = "";
+  document.getElementById("result-section").hidden = true;
+  document.getElementById("empty-state").hidden = true;
+  document.getElementById("scope-notice").hidden = true;
+  scenarioInput.scrollIntoView({ behavior: "smooth", block: "start" });
+  scenarioInput.focus();
+}
+
 async function init() {
   await loadData();
   renderPersonaButtons();
   document.getElementById("analyze-btn").addEventListener("click", runAnalysis);
+  document.getElementById("restart-btn").addEventListener("click", restartCheck);
 }
 
 init();
