@@ -149,6 +149,14 @@ textarea:focus {
   text-align: center;
 }
 
+.emergency-note {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+  color: var(--accent);
+  font-weight: 600;
+  text-align: center;
+}
+
 .result-section {
   margin-top: 32px;
 }

@@ -1238,10 +1238,13 @@ function runAnalysis() {
     return;
   }
 
-  // 조치 I: 납치·인질 협박형 보이스피싱은 이 서비스가 판정하는 3종(투자/대출/
-  // 가상자산) 대상이 아니다. 3종 체크카드로 안내하면 무의미하거나 위험할 수 있는
-  // 위급 상황이므로, 신호 탐지·유형 판정에 들어가기도 전에 가장 먼저 확인한다.
-  const urgentVoicePhishing = detectUrgentVoicePhishing(text);
+  // 조치 I: 납치·인질 협박형 보이스피싱 긴급 게이트 — 비활성화됨(지시에 따라 호출만
+  // 막음, 함수 정의(detectUrgentVoicePhishing/renderUrgentVoicePhishing)와
+  // #voice-phishing-notice 관련 HTML/CSS는 그대로 둠). 두 정규식(위협 정황 +
+  // 신고 금지·현금 요구)을 모두 요구하는 좁은 패턴이라 "납치했다, 돈을 보내라"처럼
+  // 흔한 표현 조합에서도 발동하지 않는 사각지대가 확인돼, 재검토 전까지 끈다.
+  // const urgentVoicePhishing = detectUrgentVoicePhishing(text);
+  const urgentVoicePhishing = null;
   if (urgentVoicePhishing) {
     resultSection.hidden = true;
     emptyState.hidden = true;
