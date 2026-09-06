@@ -1247,6 +1247,10 @@ function runAnalysis() {
 // 새 페이지 이동 없이 같은 화면에서 입력창으로 돌아간다. 체크박스 로컬 저장값은
 // 그대로 두고(요구사항), 결과·범위밖·빈 상태 표시만 전부 숨겨 처음 화면으로 되돌린다.
 function restartCheck() {
+  // 실수로 누르는 경우를 대비해, 실제로 초기화하기 전에 한 번 더 확인받는다.
+  if (!window.confirm("새로운 상황을 확인하시겠습니까? 지금 결과 화면이 사라집니다.")) {
+    return;
+  }
   const scenarioInput = document.getElementById("scenario-input");
   scenarioInput.value = "";
   document.getElementById("result-section").hidden = true;
