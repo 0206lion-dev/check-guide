@@ -160,6 +160,24 @@ const PATTERN_SIGNALS = [
       return "문자·메시지의 링크 클릭 유도";
     },
   },
+  {
+    // 온라인(SNS·데이팅앱 등)에서 알게 된 상대가 투자를 권유하는 유형. alerts.json의
+    // 2025-16호(유형: 가상자산, signals: ["SNS","가짜 거래소"])가 실제 근거다 —
+    // "로맨스 앱"이라는 표현 자체는 원문에 없지만, 이 경보의 verification_target이
+    // "SNS·데이팅앱 상대방의 신원·실체"로 명시돼 있어 데이팅앱류 채널을 이 소재의
+    // 일반화된 표현으로 다룬다(임의로 지어내지 않음).
+    signal: "낯선 상대의 온라인 투자 권유",
+    dataBacked: false,
+    leanType: "가상자산",
+    weight: 3,
+    source: "2025-16호 원문 제목: \"멋진 이성이 SNS에서 당신에게 메시지를 보낼 확률은? -외국인 여자친구의 달콤한 코인 투자 권유-\" (verification_target: SNS·데이팅앱 상대방의 신원·실체)",
+    match(text) {
+      return /(?:앱|SNS|온라인|사이트)[^.!?\n]{0,10}(?:알게\s*된|만난)|(?:이성|여자친구|남자친구)[^.!?\n]{0,10}(?:권유|추천|소개)/.test(text);
+    },
+    describe() {
+      return "온라인에서 알게 된 상대의 투자 권유 (2025-16호 소재)";
+    },
+  },
 ];
 
 const state = {
@@ -190,25 +208,39 @@ const MIN_TEXT_LENGTH_FOR_LLM = 20;
 //
 // "무엇을 요구했는지" 요소는 이미 runAnalysis에서 계산해 둔 matchedSignals(신호 탐지
 // 결과)를 그대로 재사용한다. 새 키워드 사전을 따로 만들지 않는 이유: signals.json
-// 23종 + 패턴 신호 5종이 이미 "링크 유도", "가상자산 소각 빙자"처럼 투자·송금
+// 23종 + 패턴 신호 6종이 이미 "링크 유도", "가상자산 소각 빙자"처럼 투자·송금
 // 요구가 아닌 다른 형태의 요구 행위까지 폭넓게 커버하고 있어, 하드코딩한 키워드
 // 목록보다 훨씬 오탐이 적다(예: "소각된다는 문자를 받았다" 같은 문장은 "투자/송금"
 // 키워드가 없어도 패턴 신호로 이미 잡힌다).
+//
+// 다만 matchedSignals만으로는 놓치는 사각지대가 실제로 있었다: "코인 투자를 같이
+// 하자고 해서 사이트에 돈을 넣었습니다"처럼 signals.json 23종·패턴 6종 어디에도
+// 정확히 걸리지 않지만 KEYWORD_FALLBACK(일반 키워드 폴백)에는 "코인"·"투자"가
+// 걸리는 문장이 있었다 — 이 경우 matchedSignals.length가 0이라 "요구 행위 없음"으로
+// 잘못 카운트됐다. keywordFallbackScore(이미 존재하는 폴백 판정 함수)의 합계도 함께
+// 보아, 신호 사전에 없어도 일반 키워드로라도 걸리면 "요구 행위가 서술됐다"고 본다.
 const LOW_INFO_MIN_LENGTH = 30;
 const LOW_INFO_MIN_ELEMENTS = 2;
 
 const CONTACT_SOURCE_HINT_PATTERN =
-  /전화|문자|카톡|카카오톡|메시지|메일|디엠|DM|텔레그램|밴드|유튜브|인스타|페이스북|블로그|지인|친구|직원|상담원|대표|업체|중개인|딜러|판매자|광고|권유받|연락(?:이|을)?\s*(?:왔|받)/;
+  /전화|문자|카톡|카카오톡|메시지|메일|디엠|DM|텔레그램|밴드|유튜브|인스타|페이스북|블로그|지인|친구|직원|상담원|대표|업체|중개인|딜러|판매자|광고|권유받|연락(?:이|을)?\s*(?:왔|받)|로맨스\s*앱|데이팅\s*앱|소개팅\s*앱|채팅\s*앱|SNS|온라인|사이트/;
 const AMOUNT_OR_RATE_HINT_PATTERN =
   /\d[\d,]*\s*(?:만\s*원|천\s*원|원)|\d{1,3}(?:\.\d+)?\s*(?:%|퍼센트|배)/;
 
+function keywordFallbackTotal(text) {
+  const { scores } = keywordFallbackScore(text);
+  return TYPE_ORDER.reduce((sum, t) => sum + scores[t], 0);
+}
+
 // 화면 경고 여부만 판단하는 렌더링 보조 함수 — determineType 등 판정 결과에는
 // 전혀 관여하지 않는다. matchedSignals는 runAnalysis에서 이미 계산된 값을 그대로
-// 넘겨받아 재사용할 뿐, 여기서 새로 신호를 탐지하지 않는다.
+// 넘겨받아 재사용할 뿐, 여기서 새로 신호를 탐지하지 않는다. keywordFallbackScore
+// 호출도 이미 존재하는 판정 폴백 함수를 읽기 전용으로 재사용할 뿐, determineType의
+// 실제 판정 결과에는 관여하지 않는다.
 function countInfoElements(text, matchedSignals) {
   let count = 0;
   if (CONTACT_SOURCE_HINT_PATTERN.test(text)) count += 1;
-  if ((matchedSignals || []).length > 0) count += 1;
+  if ((matchedSignals || []).length > 0 || keywordFallbackTotal(text) > 0) count += 1;
   if (AMOUNT_OR_RATE_HINT_PATTERN.test(text)) count += 1;
   return count;
 }
@@ -606,7 +638,68 @@ function renderLowInfoWarning(text, typeResult, matchedSignals) {
 // 결과 화면 맨 위에 "지금 해야 할 일"을 3줄 이내로 고정 요약한다. 아래 신호/유형
 // 상세, 확인 카드는 그대로 두고, 이 카드는 이미 계산된 typeResult와 pickChecks
 // 결과를 화면에 옮겨 적을 뿐 새로운 판정을 하지 않는다.
-function renderHeadline(typeResult) {
+// 조치 H — "접촉 경로"/"핵심 위험" 한 줄 문구. tests/cross_model_cases_v3.csv의
+// "접촉경로_소재"/"핵심위험" 컬럼과 같은 개념을 화면에도 반영하되, CSV 데이터를
+// 가져오지 않고 이미 계산된 감지 신호·유형 판정으로부터 그때그때 문장을 만든다.
+// 근거(실제 등장한 표현, 실제 감지된 신호)가 없으면 그 줄 자체를 만들지 않는다.
+function describeContactChannel(text) {
+  const m = text.match(CONTACT_SOURCE_HINT_PATTERN);
+  return m ? m[0] : null;
+}
+
+const CORE_RISK_ACTION_BY_TYPE = {
+  투자사기: "투자를 명목으로 자금 이체를 요구받는",
+  대출사기: "대출을 빌미로 선입금이나 개인정보를 요구받는",
+  가상자산: "가상자산 투자·출금을 빌미로 자금을 요구받는",
+};
+
+// 한글 받침 유무에 따라 조사를 고른다(마지막 글자 기준). "이/가"와 "로/으로" 모두
+// 받침 유무로 갈리므로 하나의 헬퍼로 처리한다.
+function hasBatchim(word) {
+  const ch = word.trim().slice(-1);
+  const code = ch.charCodeAt(0) - 0xac00;
+  if (code < 0 || code > 11171) return false;
+  return code % 28 !== 0;
+}
+function subjectParticle(word) {
+  return hasBatchim(word) ? "이" : "가";
+}
+function directionParticle(word) {
+  return hasBatchim(word) ? "으로" : "로";
+}
+
+function describeCoreRisk(typeResult, matchedSignals) {
+  if (!typeResult || !typeResult.type || typeResult.type === NORMAL_TYPE) return null;
+  const action = CORE_RISK_ACTION_BY_TYPE[typeResult.type];
+  if (!action) return null;
+
+  const dataBackedNames = (matchedSignals || []).filter((s) => s.dataBacked).map((s) => s.signal);
+  const patternNames = (matchedSignals || []).filter((s) => !s.dataBacked).map((s) => s.signal);
+  const keywordNames = typeResult.keywordsForChosenType || [];
+
+  let basisLabel = null;
+  if (dataBackedNames.length) basisLabel = `"${dataBackedNames[0]}" 신호`;
+  else if (patternNames.length) basisLabel = `"${patternNames[0]}" 패턴`;
+  else if (keywordNames.length) basisLabel = `"${keywordNames[0]}" 키워드`;
+
+  if (!basisLabel) return null; // 근거 없는 문장은 만들지 않는다
+  return `${basisLabel}${subjectParticle(basisLabel)} 감지되어 ${action} 상황으로 보입니다.`;
+}
+
+function buildHeadlineMetaHtml(text, typeResult, matchedSignals) {
+  const contactChannel = describeContactChannel(text);
+  const coreRisk = describeCoreRisk(typeResult, matchedSignals);
+  let html = "";
+  if (contactChannel) {
+    html += `<p class="headline-desc">접촉 경로: "${escapeHtml(contactChannel)}"${directionParticle(contactChannel)} 접근한 것으로 보입니다.</p>`;
+  }
+  if (coreRisk) {
+    html += `<p class="headline-desc">핵심 위험: ${escapeHtml(coreRisk)}</p>`;
+  }
+  return html;
+}
+
+function renderHeadline(text, typeResult, matchedSignals) {
   const el = document.getElementById("headline-output");
   el.innerHTML = "";
 
@@ -626,11 +719,14 @@ function renderHeadline(typeResult) {
     return;
   }
 
+  const metaHtml = buildHeadlineMetaHtml(text, typeResult, matchedSignals);
+
   const checks = pickChecks(typeResult.type);
   if (checks.length === 0) {
     el.innerHTML = `<div class="headline-card">
       <div class="headline-title">${escapeHtml(typeResult.type)} 유형입니다</div>
       <p class="headline-desc">이 유형에 대해 확인된 조회 경로가 없습니다. 아래 상세를 참고하세요.</p>
+      ${metaHtml}
     </div>`;
     return;
   }
@@ -642,6 +738,7 @@ function renderHeadline(typeResult) {
   el.innerHTML = `<div class="headline-card">
     <div class="headline-title">${escapeHtml(typeResult.type)} 유형입니다. 아래 ${checks.length}가지를 확인하세요:</div>
     <ol class="headline-steps">${steps}</ol>
+    ${metaHtml}
   </div>`;
 }
 
@@ -1048,7 +1145,7 @@ function runAnalysis() {
 
   clearSummary();
   renderLowInfoWarning(text, typeResult, matchedSignals);
-  renderHeadline(typeResult);
+  renderHeadline(text, typeResult, matchedSignals);
   renderSignals(matchedSignals, typeResult);
   renderType(typeResult);
   renderChecks(typeResult.type);
